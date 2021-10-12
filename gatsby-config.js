@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/taekjunsim",
   siteMetadata: {
     title: `Front-end Developer`,
     author: {
