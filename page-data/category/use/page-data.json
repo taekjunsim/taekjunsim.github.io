@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-category-js",
-    "path": "/category/use/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"Front-end Developer"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/howToUseMarkdown/"},"frontmatter":{"title":"How to use markdown"}}}]}},"pageContext":{"category":"use"}},
-    "staticQueryHashes": ["2841359383"]}

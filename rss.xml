@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Front-end Developer]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 18 Oct 2021 13:03:38 GMT</lastBuildDate><item><title><![CDATA[개발자 이야기]]></title><description><![CDATA[머니맨의 글을 자주 읽었다. 매번 글을 읽으며 사이트의 레이아웃이 직관적이고 글이 잘 읽혀서 이런 블로그라면 글을 쓰고 싶을 것 같다는 생각을 하곤 했다. 임팩트가 컸던 것일까? 21년…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/story/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/story/</guid><pubDate>Tue, 12 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;머니맨의 글을 자주 읽었다. 매번 글을 읽으며 사이트의 레이아웃이 직관적이고 글이 잘 읽혀서 이런 블로그라면 글을 쓰고 싶을 것 같다는 생각을 하곤 했다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Front-end Developer]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 19 Oct 2021 08:07:49 GMT</lastBuildDate><item><title><![CDATA[알고리즘_모의고사]]></title><description><![CDATA[문제 수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다. 1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4,…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/algorithm/1019/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/algorithm/1019/</guid><pubDate>Tue, 19 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제&lt;/h1&gt;
+&lt;p&gt;수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 &lt;br&gt;전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.&lt;/p&gt;
+&lt;p&gt;1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, …&lt;br&gt;
+2번 수포자가 찍는 방식: 2, 1, 2, 3, 2, 4, 2, 5, 2, 1, 2, 3, 2, 4, 2, 5, …&lt;br&gt;
+3번 수포자가 찍는 방식: 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, …&lt;/p&gt;
+&lt;p&gt;1번 문제부터 마지막 문제까지의 정답이 순서대로 들은 배열 answers가 주어졌을 때, &lt;br&gt;가장 많은 문제를 맞힌 사람이 누구인지 배열에 담아 return 하도록 solution 함수를 &lt;br&gt;작성해주세요.&lt;/p&gt;
+&lt;h5&gt;제한 조건&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;시험은 최대 10,000 문제로 구성되어있습니다.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;문제의 정답은 1, 2, 3, 4, 5중 하나입니다.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5&gt;문제 풀이&lt;/h5&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function solution(answers) {
+  let studentA = [1, 2, 3, 4, 5];
+  let studentB = [2, 1, 2, 3, 2, 4, 2, 5];
+  let studentC = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
+
+  let count = [0, 0, 0];
+  let answer = [];
+
+  for(let i = 0; i &amp;lt; answers.length; i++) {
+    if(studentA[i%5] === answers[i]) count[0] += 1;
+    if(studentB[i%8] === answers[i]) count[1] += 1;
+    if(studentC[i%10] === answers[i]) count[2] += 1;
+  }
+
+  if(Math.max(...count) === count[0]) answer.push(1);
+  if(Math.max(...count) === count[1]) answer.push(2);
+  if(Math.max(...count) === count[2]) answer.push(3);
+
+  return answer;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5&gt;블록커&lt;/h5&gt;
+&lt;p&gt;나머지를 인덱스로 활용하는 것이 관건이었다.&lt;/p&gt;
+&lt;h5&gt;끄적&lt;/h5&gt;
+&lt;p&gt;한 달 전쯤 풀었었는데 스터디를 새로 시작하며 혹시나싶어 다시 풀어봤다. 역시나. 어떻게 풀었는지 기억이 나지 않았다.&lt;/p&gt;
+&lt;p&gt;그래도 처음 풀 때는 전혀 감을 못잡았는데, 이번에는 30분만에 풀었다. 그리고 이전 코드보다 훨씬 깔끔해진 느낌이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;* 이전 코드
+
+function solution(answers) {
+  let answer = [];
+  let studentA = [1, 2, 3, 4, 5];
+  let studentB = [2, 1, 2, 3, 2, 4, 2, 5];
+  let studentC = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
+
+  let sumStudentA = 0;
+  let sumStudentB = 0;
+  let sumStudentC = 0;
+
+  for(let i = 0; i &amp;lt; answers.length; i++) {
+    if(studentA[i%studentA.length] === answers[i]) {
+      sumStudentA += 1;
+    }
+    if(studentB[i%studentB.length] === answers[i]) {
+      sumStudentB += 1;
+    }
+    if(studentC[i%studentC.length] === answers[i]) {
+      sumStudentC += 1;
+    }
+  }
+
+  let max = Math.max(sumStudentA, sumStudentB, sumStudentC);
+
+  if (sumStudentA === max) {answer.push(1)};
+  if (sumStudentB === max) {answer.push(2)};
+  if (sumStudentC === max) {answer.push(3)};
+
+  return answer
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;만족스럽다. 한 달 쯤 뒤에 다시 한 번 풀어봐야지&lt;/p&gt;</content:encoded></item><item><title><![CDATA[개발자 이야기 1편 - 개발자의 길을 걷게 된 계기]]></title><description><![CDATA[머니맨의 글을 자주 읽었다. 매번 글을 읽으며 사이트의 레이아웃이 직관적이고 글이 잘 읽혀서 이런 블로그라면 글을 쓰고 싶을 것 같다는 생각을 하곤 했다. 임팩트가 컸던 것일까? 21년…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/story/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/story/</guid><pubDate>Tue, 12 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;머니맨의 글을 자주 읽었다. 매번 글을 읽으며 사이트의 레이아웃이 직관적이고 글이 잘 읽혀서 이런 블로그라면 글을 쓰고 싶을 것 같다는 생각을 하곤 했다.&lt;/p&gt;
 &lt;p&gt;임팩트가 컸던 것일까? 21년 4월, 개발을 시작하기로 마음 먹으며 &lt;a href=&quot;https://moneyman.kr&quot;&gt;머니맨&lt;/a&gt;처럼 누구에게도 구속받지 않는 나만의 웹사이트를 만들어서 글을 써보자!는 목표가 생겼다.
 &lt;br&gt;
 그리고 21년 10월 12일, 나는 나만의 웹사이트를 만들었다. 비록 깃허브 블로그라 직접 서버를 개설하고 도메인까지 연결하지는 못했지만 목표에 한 걸음 더 다가갔다.&lt;/p&gt;
@@ -30,7 +100,7 @@ wrapped in plastic, and vacuum packed. From the salt curing process, the
 salted duck eggs have a briny aroma, a gelatin-like egg white and a
 firm-textured, round yolk that is bright orange-red in color.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;./salty_egg.jpg&quot; alt=&quot;Chinese Salty Egg&quot;&gt;&lt;/p&gt;
+&lt;!-- ![Chinese Salty Egg](./salty_egg.jpg) --&gt;
 &lt;p&gt;You can also write code blocks here!&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; saltyDuckEgg &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;chinese preserved food product&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;| Number | Title | Year |
