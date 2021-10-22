@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-category-js",
     "path": "/category/algorithm/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"Front-end Developer"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/algorithm/1019/"},"frontmatter":{"title":"알고리즘_모의고사"}}}]}},"pageContext":{"category":"algorithm"}},
+    "result": {"data":{"site":{"siteMetadata":{"title":"Front-end Developer"}},"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"fields":{"slug":"/algorithm/1020/"},"frontmatter":{"title":"알고리즘_자릿수 더하기"}}},{"node":{"fields":{"slug":"/algorithm/1019/"},"frontmatter":{"title":"알고리즘_모의고사"}}}]}},"pageContext":{"category":"algorithm"}},
     "staticQueryHashes": ["2841359383"]}

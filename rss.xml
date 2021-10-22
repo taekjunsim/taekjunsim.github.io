@@ -1,4 +1,130 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Front-end Developer]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 19 Oct 2021 08:07:49 GMT</lastBuildDate><item><title><![CDATA[알고리즘_모의고사]]></title><description><![CDATA[문제 수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다. 1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4,…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/algorithm/1019/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/algorithm/1019/</guid><pubDate>Tue, 19 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Front-end Developer]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 22 Oct 2021 09:56:22 GMT</lastBuildDate><item><title><![CDATA[Proxy서버]]></title><description><![CDATA[CORS를 해결하는 과정에서 Proxy서버를 이용하는 방법에 대해 알게 되었다. 브라우저가 동일 출처 정책(Same-Origin Policy, SOP)를 지켜서 다른 출처의 리소스 접근을 금지하기 때문에,
+CORS…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/develop/proxy/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/develop/proxy/</guid><pubDate>Fri, 22 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CORS를 해결하는 과정에서 Proxy서버를 이용하는 방법에 대해 알게 되었다.&lt;/p&gt;
+&lt;p&gt;브라우저가 동일 출처 정책(Same-Origin Policy, SOP)를 지켜서 다른 출처의 리소스 접근을 금지하기 때문에,
+CORS에러는 클라이언트(브라우저)가 데이터 서버에 직접 데이터를 요청할 때 발생한다.&lt;/p&gt;
+&lt;p&gt;만약, 트위터 API를 사용하는 경우를 가정해보자. 아래와 같이 URI를 작성하면 &lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;클라이언트에서 서버의 주소(https://api.twitter.com)에 데이터를 직접 요청&lt;/code&gt;하게 된다. 즉, CORS 에러가 발생할 여지가 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const res = await axios
+  .get(`https://api.twitter.com/2/tweets/search/recent?query=${검색어}`, {
+  headers: { Authorization: `Bearer ${TWIT_API.BEARER_TOKEN}` },
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;트위터를 제외한 다른 오픈API를 사용하는 경우도 마찬가지이다. 클라이언트에서 데이터 서버에 직접 요청하는 경우에는
+예외없이 CORS에러가 발생할 여지가 있다.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/d0d7164e9864f5da2148f5edd5d54597/29114/cors.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 44.30379746835443%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABv0lEQVQoz1VS2W6jQBDk/38n0u7LKpKjSIkdx8465jQGM1wDGNtcw7FoKppe7eGHpprqq7pBm8ZinoZ8HgWff43FPHBnFkwnTnTpnfWCE459RvGh9OfOeZ/HG5unqSBeY8cPuJsnBPoS1vsC1uMDwu0z3MMW45BjGgsy5YsuJfRV/OMZx/UCzuMDjKfvODkbZJkLLYst6e1fZeRupacv5dFYySSx5e3KZFNH0vd+St/byTgy5dBnshdcxu5W+sZKssNGht6O6vPElk0TS62qQlwuAYTg6DpOyFMHl/KENLHhezuc/E8ksYXqxigWRRa6LkXbJqS6LE+4XRmGPoN2vQRQRmv1OZF55qKuIrBAR1vHiCMTUWggZDqS2EbGD+gFRy8yOoGqVwIUp9VVSFNVYsgM8s+FR9ODQEdVR7SBaa1hmm+wzDcqVnlFfkR59slXCqmhelyvAfafL9D3rzRdTS0zF8vFN5wTG30dY7iFGLqUVlTKDs4GprEiVOoV17UpNPE3idPaFFD35Ae0+hLNaY/KWuPy8gM1M+jOqrBtEjR1RKdp6ph63DX8TSS4exccQv0uCtUH+y8m6Ib/7A//BRBLmu3ULZSUAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;cors&quot; title=&quot;cors&quot; src=&quot;/static/d0d7164e9864f5da2148f5edd5d54597/f058b/cors.png&quot; srcset=&quot;/static/d0d7164e9864f5da2148f5edd5d54597/c26ae/cors.png 158w,
+/static/d0d7164e9864f5da2148f5edd5d54597/6bdcf/cors.png 315w,
+/static/d0d7164e9864f5da2148f5edd5d54597/f058b/cors.png 630w,
+/static/d0d7164e9864f5da2148f5edd5d54597/40601/cors.png 945w,
+/static/d0d7164e9864f5da2148f5edd5d54597/78612/cors.png 1260w,
+/static/d0d7164e9864f5da2148f5edd5d54597/29114/cors.png 1920w&quot; sizes=&quot;(max-width: 630px) 100vw, 630px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;br&gt;
+이런 CORS오류는 생각보다 쉽게 해결할 수 있다. &lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;서버를 거쳐서 데이터를 요청&lt;/code&gt;하면 된다.&lt;/p&gt;
+&lt;p&gt;Apache나 Nignx로 웹서버를 구축하는 방법도 있겠지만, &lt;br&gt;오늘은 좀 더 쉬운 방법인
+Proxy를 활용하는 방법에 대해 알아보자.&lt;/p&gt;
+&lt;p&gt;Proxy를 한 마디로 요약하면 중계자라고 말할 수 있다.&lt;br&gt;
+아래의 그림처럼 Proxy를 이용하면 브라우저는 프론트엔드 서버와 통신한다.&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;&gt;
+      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/d8aa987381ab01543072ae7ca410b5b2/b9024/proxy-draw.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 82.91139240506328%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAClElEQVQ4y31U2XLaQBDU//9O4soTlYRcPsBlgUESoPu+0S3ZcXVqRgjHceyHrl0d29vT07tC2/hoah809l2IqnTRNgG6NuB3ND9/7yN0Xcigf9vCRvfPPwJNCHXlwvcUROGBURxtJi8LhxfQPLQlZI6MxN8hkG4QX84QWhvUJw6CQKykJo5UXF3NoGsiwmAPQ1/xGPg7JLGGpvGxE39it/wK6XaOxZcLHOQFTHOD+lTVqJAknwhJoSzdwLG3yDOTVZJCx5bQ1B6KwmHyOrf4OU10VKXDgl4oHEtymNBzZVjGPTRN5E10bQXL3PBiJqhcPD3leHxIcMwt3vhM+OyhxyrL0sGxdFDWHsqjzeVr6h1vlqUGg56l7TUsawPLvOdv3JTm1JS+izB0EfomwEMfo090dJGKuva4OaRgu7liP4c+hqGvsRJ/QNdXrL6uvBH1CMGzt9jffoO2+oX15Qzy7AO05Ry2IzHh3d33k0qXFTz9zthbKnf0jyIUcdkEIY01GPICrirCVJbQ5AWC8ICyGBtCi4d+XEAE1BTf37G/5Kmpr7mRirJg/wXyjbr3+JgySPYxNznEU6ToHSmJYxXz+SeE4QFZZiBJdISxhrywx1QUNoTiaHFp7antpIB2HjvnneNAIFLKJYloKw9lZiLTVhhSA8NDwqdHoEVEQrK3m2uOznQ6pihMHaR/hyFGGWvYk8/yAurnj1A+X0Anq4L9cw6JKAwOY4Sa1+qmeBF5lVs43F9CV5YwVZFHWxW5ccJ0OVCn+MD/dVm8BSJNUmO8KNoxgyk9t+Ez4QtFzduYSicvm8o7XyCUUzocQtu8T/AK9WgR+WUaa3iuAtvaci7pvdA0/n+8eg+jx6Rqv7uF68iM6Tz/AWWy9A03UPqMAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;proxy draw&quot; title=&quot;proxy draw&quot; src=&quot;/static/d8aa987381ab01543072ae7ca410b5b2/f058b/proxy-draw.png&quot; srcset=&quot;/static/d8aa987381ab01543072ae7ca410b5b2/c26ae/proxy-draw.png 158w,
+/static/d8aa987381ab01543072ae7ca410b5b2/6bdcf/proxy-draw.png 315w,
+/static/d8aa987381ab01543072ae7ca410b5b2/f058b/proxy-draw.png 630w,
+/static/d8aa987381ab01543072ae7ca410b5b2/40601/proxy-draw.png 945w,
+/static/d8aa987381ab01543072ae7ca410b5b2/b9024/proxy-draw.png 1203w&quot; sizes=&quot;(max-width: 630px) 100vw, 630px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;br&gt;
+요청하는 데이터가 프론트엔드 서버에 없는 경우에는,
+프론트엔드 서버가 지정해둔 주소(proxy 설정)와 통신을 해서 데이터를 받아오고,
+이렇게 받아온 데이터를 브라우저에 건네준다.&lt;/p&gt;
+&lt;p&gt;서버 간 통신에서는 origin을 확인하지 않는 데다가, 프론트엔드 서버와 브라우저는 같은
+origin을 공유하므로 CORS에러를 해결할 수 있다.&lt;/p&gt;
+&lt;p&gt;예를 들어, proxy를 사용하여 twitter API에서 데이터를 받아온다면&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;package.json파일에 proxy 주소를 지정한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;proxy 주소에는 데이터를 받아올 URI 중 origin영역을 입력한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;package.json 파일
+
+{
+  {
+    &quot;development&quot;: [
+      ...
+    ]
+  },
+  &quot;proxy&quot;: &quot;https://api.twitter.com&quot;,
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;axios(혹은 fetch)의 URI에는 proxy 주소를 제외한 나머지 부분을 입력한다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const res = await axios
+  .get(`/2/tweets/search/recent?query=${inputValue}`, {
+  headers: { Authorization: `Bearer ${TWIT_API.BEARER_TOKEN}` },
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;끝!&lt;/p&gt;
+&lt;p&gt;참고: &lt;a href=&quot;https://www.youtube.com/watch?v=VaAWIAxvj0A&amp;#x26;ab_channel=%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9&quot;&gt;생활코딩&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[알고리즘_자릿수 더하기]]></title><description><![CDATA[문제 자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
+예를 들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다. 제한 조건 N의 범위 : 100,000,00…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/algorithm/1020/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/algorithm/1020/</guid><pubDate>Wed, 20 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제&lt;/h1&gt;
+&lt;p&gt;자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를&lt;br&gt; 만들어 주세요.
+예를 들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.&lt;/p&gt;
+&lt;h5&gt;제한 조건&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;N의 범위 : 100,000,000 이하의 자연수&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5&gt;문제 풀이&lt;/h5&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function solution(n) {
+  let answer = n.toString()
+                .split(&apos;&apos;)
+                .map(el =&gt; parseInt(el))
+                .reduce((prev, current) =&gt; prev + current );
+
+  return answer;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5&gt;블록커&lt;/h5&gt;
+&lt;p&gt;각각의 자릿수를 더하는 방법이 관건이었다.&lt;/p&gt;
+&lt;h5&gt;끄적&lt;/h5&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;function solution(n) {
+  let result = 0;
+  let str = n.toString()
+              .split(&apos;&apos;)
+              .map(el =&gt; result += parseInt(el));
+
+  return result;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이전에는 별도의 변수를 생성하여 활용한 반면에&lt;br&gt;
+이번에는 reduce Method를 활용해보았다.&lt;/p&gt;
+&lt;p&gt;reduce는 map과 동일하게 함수를 인자로 사용한다.
+&lt;br&gt;(인자로 사용되는 함수 === 콜백함수)&lt;/p&gt;
+&lt;p&gt;map을 사용할 때는 콜백함수에 한 가지 이상의 인자를 입력해야 한다.
+&lt;br&gt;바로 currentValue, 처리할 요소의 값을 가리킨다.&lt;/p&gt;
+&lt;p&gt;예를 들어&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const array = [1, 2, 3];
+
+array.map((currentValue, index) =&gt; {
+  console.log(currentValue) // (1, 2, 3)
+  console.log(index) // (0, 1, 2)
+})&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;reduce를 사용할 때는 콜백함수에 2가지 이상의 인자를 입력해야 한다.
+&lt;br&gt;accumulator, currentValue인데
+&lt;br&gt;accumulator는 initialValue(첫 번째 값) 혹은 콜백함수의 반환값을 가리킨다.
+currentValue는 map과 동일하게 처리할 요소의 값을 가리킨다.&lt;/p&gt;
+&lt;p&gt;예를 들어&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const array = [1, 2, 3];
+
+array.reduce((accumulator, currentValue) =&gt; {
+  console.log(accumulator, currentValue);
+  return accumulator + currentValue;
+})
+
+// 1 (=accumulator), 3 (=currentValue)
+// 3 (=accumulator), 3 (=currentValue)
+// 결과적으로 반환되는 값은 6;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;끝!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[알고리즘_모의고사]]></title><description><![CDATA[문제 수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다. 1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4,…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/algorithm/1019/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/algorithm/1019/</guid><pubDate>Tue, 19 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제&lt;/h1&gt;
 &lt;p&gt;수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 &lt;br&gt;전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.&lt;/p&gt;
 &lt;p&gt;1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, …&lt;br&gt;
 2번 수포자가 찍는 방식: 2, 1, 2, 3, 2, 4, 2, 5, 2, 1, 2, 3, 2, 4, 2, 5, …&lt;br&gt;
