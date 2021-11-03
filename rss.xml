@@ -1,4 +1,105 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Front-end Developer]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 01 Nov 2021 15:28:30 GMT</lastBuildDate><item><title><![CDATA[Webpack]]></title><description><![CDATA[CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자. package.json 파일 만들기 :: Webpack을 설치하려면 우선 package.json…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/develop/webpack/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/develop/webpack/</guid><pubDate>Sun, 31 Oct 2021 15:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Front-end Developer]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 03 Nov 2021 05:35:40 GMT</lastBuildDate><item><title><![CDATA[Hoisting]]></title><description><![CDATA[Hoisting이란 코드를 실행하기 전에 실행 컨텍스트가 생성되는데, 해당 실행 컨텍스트에 등록된 모든 선언을 메모리에 저장하는 현상을 말한다. 변수는…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/develop/hoisting/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/develop/hoisting/</guid><pubDate>Wed, 03 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Hoisting이란&lt;/h4&gt;
+&lt;p&gt;코드를 실행하기 전에 실행 컨텍스트가 생성되는데, 해당 실행 컨텍스트에 등록된 모든 선언을 메모리에 저장하는 현상을 말한다.&lt;/p&gt;
+&lt;p&gt;변수는 3단계에 걸쳐 생성된다. 일반적으로 알고 있는 선언과 할당 사이에 초기화 단계가 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;선언&lt;/strong&gt; 단계 (Declaration phase)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;변수를 실행 컨텍스트의 변수 객체에 등록한다.&lt;/li&gt;
+&lt;li&gt;스코프를 참조하는 단계&lt;/li&gt;
+&lt;li&gt;호이스팅이 발생할 때 끌어올려지는 영역&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;strong&gt;초기화&lt;/strong&gt; 단계 (Initialization phase)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;등록된 변수를 메모리에 저장한다.&lt;/li&gt;
+&lt;li&gt;이 단계에서 변수의 값은 메모리에 undefined로 초기화(저장)된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let test;
+const test2;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;&lt;strong&gt;할당&lt;/strong&gt; 단계 (Assignment phase)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;초기화된 변수에 실제 값을 할당한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;test = 10;
+test2 = 100;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5&gt;TDZ (Temporal Dead Zone)&lt;/h5&gt;
+&lt;p&gt;호이스팅에 대해 이해하기 위해서는 반드시 알아야 하는 개념으로, &lt;strong&gt;스코프를 참조하는 지점(선언 단계)부터 초기화 직전까지의 구간&lt;/strong&gt;을 말한다.&lt;/p&gt;
+&lt;h4&gt;var, let, const&lt;/h4&gt;
+&lt;p&gt;변수를 선언하는 모든 방식은 호이스팅이 발생한다.&lt;/p&gt;
+&lt;h5&gt;- var&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;선언 단계와 초기화 단계가 동시에 진행된다. 즉, 선언하자마자 바로 메모리에 저장된다. 그래서 TDZ가 존재하지 않는다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// (선언 및 초기화 - hoisting)
+
+console.log(test) // undefined
+
+var test = 2;
+
+console.log(test) // 2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;① 선언 단계와 초기화 단계가 동시에 진행되면서 test변수의 값으로 undefined가 저장되었다.&lt;br&gt;
+② 호이스팅으로 인해 선언 단계가 끌어올려지면서 선언하기 전에 사용이 가능해졌다.&lt;br&gt;
+③ 할당 단계는 동시에 진행되지 않기 때문에 undefined가 출력되는 모습을 확인할 수 있다.&lt;/p&gt;
+&lt;h5&gt;- let, const&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;선언 단계와 초기화 단계가 분리되어 있다. 그래서 초기화하기 전까지는 메모리에 저장되지 않은 상태라서 접근조차 할 수 없기 때문에 ReferenceError가 발생한다. 이 때 선언 단계부터 초기화 직전의 구간이 TDZ다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// (선언 - hoisting)
+
+console.log(test) // ReferenceError: test is not defined
+
+let test; (초기화)
+
+또는
+
+const test; (초기화);
+
+console.log(test) // undefined&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;① 선언 단계와 초기화 단계가 별도로 진행되면서, 호이스팅으로 인해 선언 단계가 끌어올려졌지만 아직 초기화 단계가 실행되지 않았다.&lt;br&gt;
+② 메모리에 할당되지 않아 주소를 참조할 수 없으므로, ReferenceError가 발생한다.&lt;br&gt;
+③ 초기화 단계가 지나고 나서야 undefined가 출력되는 모습을 확인할 수 있다.&lt;/p&gt;
+&lt;h4&gt;function&lt;/h4&gt;
+&lt;p&gt;함수를 생성하는 6가지 방법 중에서 함수 선언식만 호이스팅이 발생한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;함수 선언식은 선언 단계, 초기화 단계, 할당 단계가 모두 동시에 진행된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// (선언, 초기화, 할당 - hoisting)
+
+console.log(test()) // 2
+
+function test() {
+  return 2;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;함수 표현식은 변수를 선언하여 변수에 함수를 할당하는 것으로 인식한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// (선언 및 초기화 - hoisting)
+
+console.log(test) // undefined
+
+var test = function () {
+  return 2;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;① 할당 단계는 동시에 진행되지 않기 때문에 undefined가 출력되는 모습을 확인할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// (선언 - hoisting)
+
+console.log(test()) // ReferenceError: test is not a function
+
+let test = function () {
+  return 2;
+}
+
+또는
+
+const test = function () {
+  return 2;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;① 메모리에 저장이 되어 있지 않기 때문에 ReferenceError가 뜨고, 함수인지 확인이 안되므로 test is not a function 에러가 뜬다.&lt;/p&gt;
+&lt;p&gt;끝!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Webpack]]></title><description><![CDATA[CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자. package.json 파일 만들기 :: Webpack을 설치하려면 우선 package.json…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/develop/webpack/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/develop/webpack/</guid><pubDate>Mon, 01 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자.&lt;/p&gt;
 &lt;h4&gt;package.json 파일 만들기&lt;/h4&gt;
 &lt;p&gt;:: Webpack을 설치하려면 우선 package.json파일이 있어야 한다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm init -y&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
