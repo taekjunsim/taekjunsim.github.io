@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Front-end Developer]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 03 Nov 2021 05:36:19 GMT</lastBuildDate><item><title><![CDATA[Hoisting]]></title><description><![CDATA[Hoisting이란 코드를 실행하기 전에 실행 컨텍스트가 생성되는데, 해당 실행 컨텍스트에 등록된 모든 선언을 메모리에 저장하는 현상을 말한다. 변수는…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/develop/hoisting/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/develop/hoisting/</guid><pubDate>Wed, 03 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Hoisting이란&lt;/h4&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Front-end Developer]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 03 Nov 2021 05:39:16 GMT</lastBuildDate><item><title><![CDATA[Hoisting]]></title><description><![CDATA[Hoisting이란 코드를 실행하기 전에 실행 컨텍스트가 생성되는데, 해당 실행 컨텍스트에 등록된 모든 선언을 메모리에 저장하는 현상을 말한다. 변수는…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/develop/hoisting/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/develop/hoisting/</guid><pubDate>Wed, 03 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Hoisting이란&lt;/h4&gt;
 &lt;p&gt;코드를 실행하기 전에 실행 컨텍스트가 생성되는데, 해당 실행 컨텍스트에 등록된 모든 선언을 메모리에 저장하는 현상을 말한다.&lt;/p&gt;
 &lt;p&gt;변수는 3단계에 걸쳐 생성된다. 일반적으로 알고 있는 선언과 할당 사이에 초기화 단계가 있다.&lt;/p&gt;
 &lt;ol&gt;
@@ -99,7 +99,14 @@ const test = function () {
   return 2;
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;① 메모리에 저장이 되어 있지 않기 때문에 ReferenceError가 뜨고, 함수인지 확인이 안되므로 test is not a function 에러가 뜬다.&lt;/p&gt;
-&lt;p&gt;끝!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Webpack]]></title><description><![CDATA[CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자. package.json 파일 만들기 :: Webpack을 설치하려면 우선 package.json…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/develop/webpack/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/develop/webpack/</guid><pubDate>Mon, 01 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자.&lt;/p&gt;
+&lt;p&gt;끝!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jwlee.dev/js-visualized/hoisting/&quot;&gt;DevStore&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ui.toast.com/weekly-pick/ko_20191014&quot;&gt;HANAMON&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://noogoonaa.tistory.com/78&quot;&gt;noogoona&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ui.toast.com/weekly-pick/ko_20191014&quot;&gt;TOASTUI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Webpack]]></title><description><![CDATA[CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자. package.json 파일 만들기 :: Webpack을 설치하려면 우선 package.json…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/develop/webpack/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/develop/webpack/</guid><pubDate>Mon, 01 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자.&lt;/p&gt;
 &lt;h4&gt;package.json 파일 만들기&lt;/h4&gt;
 &lt;p&gt;:: Webpack을 설치하려면 우선 package.json파일이 있어야 한다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm init -y&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
