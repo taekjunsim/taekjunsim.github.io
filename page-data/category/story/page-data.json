@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-category-js",
     "path": "/category/story/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"Front-end Developer"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/story/"},"frontmatter":{"title":"개발자 이야기 1편 - 개발자의 길을 걷게 된 계기"}}}]}},"pageContext":{"category":"story"}},
+    "result": {"data":{"site":{"siteMetadata":{"title":"TaekjunSim"}},"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/story/"},"frontmatter":{"title":"개발자 이야기 1편 - 개발자의 길을 걷게 된 계기"}}}]}},"pageContext":{"category":"story"}},
     "staticQueryHashes": ["2841359383"]}
