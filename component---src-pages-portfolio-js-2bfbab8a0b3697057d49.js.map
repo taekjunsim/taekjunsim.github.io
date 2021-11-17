@@ -1,1 +1,0 @@
-{"version":3,"file":"component---src-pages-portfolio-js-2bfbab8a0b3697057d49.js","mappings":"mJAUA,UARA,WACE,OACE,2BACE","sources":["webpack://gatsby-starter-blog/./src/pages/portfolio.js"],"sourcesContent":["import React from 'react'\n\nfunction portfolio() {\n  return (\n    <div>\n      <p>hi</p>\n    </div>\n  )\n}\n\nexport default portfolio"],"names":[],"sourceRoot":""}
