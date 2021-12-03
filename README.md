@@ -37,41 +37,41 @@
 
 // ----------------------------------
 
-// {
-// 	class Animal {
-// 		constructor(name) {
-// 			this.name = name;
-// 		}
+{
+	class Animal {
+		constructor(name) {
+			this.name = name;
+		}
 		
-// 		eat() {
-// 			return 'eating';
-// 		}
-// 	}
+		eat() {
+			return 'eating';
+		}
+	}
 
-// 	class Cat extends Animal {
-// 		constructor(name, age) {
-// 			super(name);
+	class Cat extends Animal {
+		constructor(name, age) {
+			super(name);
 			
-// 			this.age = age;
-// 		}
+			this.age = age;
+		}
 		
-// 		meow() {
-// 			return 'meow';
-// 		}
-// 	}
+		meow() {
+			return 'meow';
+		}
+	}
 
-// 	class Dog extends Animal {
-// 		bowow() {
-// 			return 'bowow';
-// 		}
-// 	}
+	class Dog extends Animal {
+		bowow() {
+			return 'bowow';
+		}
+	}
 
-// 	const cat = new Cat('bee', 13);
-// 	const dog = new Dog();
+	const cat = new Cat('bee', 13);
+	const dog = new Dog();
 
-// 	console.log(`Name is ${cat.name}. He is ${cat.age}`);
-// 	console.log(dog.name);
-// }
+	console.log(`Name is ${cat.name}. He is ${cat.age}`);
+	console.log(dog.name);
+}
 
 // // -------------------------------------------------
 
