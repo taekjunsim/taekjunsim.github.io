@@ -1,3 +1,22 @@
+#### 21.12.06.
+
+- eslint parsing error
+
+ESLint가 ES6 ~ 7을 파싱할 때 문제가 생기는 경우가 있다고 한다. 위 문제는 babel-eslint 패키지를 설치하여 해결할 수 있다.
+
+```
+npm install babel-eslint --save-dev
+
+or
+
+yarn add babel-eslint --dev
+```
+
+babel-eslint 설치 후에는 프로젝트 폴더의 .eslintrc 파일을 열고 아래 내용을 추가합니다.
+
+```
+"parser": "babel-eslint"
+```
 
 #### 21.12.03.
 
