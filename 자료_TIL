@@ -1,4 +1,55 @@
 ### 21.12.07.
+성능 최적화 (리렌더링 시 함수가 새로 생성되는 것을 방지하기 위해 useCallback 사용)
+클릭 제한
+
+```
+const addTime = (e:React.MouseEvent<HTMLElement>) => {
+  const { value } = (e.target as HTMLInputElement);
+  const addTime = Number(value.slice(0, 2));
+
+  if(value.includes('s')) {
+    setSecond(sec.current += addTime); // 리렌더링
+  } else if(value.includes('m')) {
+    setMinute(min.current += addTime); // 리렌더링
+  }
+}
+
+const startTimer = useCallback(() => {
+  console.log('startTimer');
+  restTime.current = sec.current + min.current*60;
+
+  const tiktok = setInterval(() => {
+    restTime.current += -1
+
+    if(!min.current && !sec.current) {
+      return (clearInterval(tiktok), setTimeout(() => alert('timeover'), 1));
+    } else {
+      return (
+        (!!min.current && !sec.current) 
+          ? (setMinute(min.current - 1), sec.current = 59, setSecond(sec.current)) // 리렌더링
+          : setSecond(sec.current += -1) // 리렌더링
+      )
+    };
+
+  }, 1000)
+}, []);
+```
+
+* cycle
+1. 렌더링 
+2. addTime 함수 호출 → state변경 → 리렌더링 → 모든 함수 재생성
+3. startTimer 함수 호출 → Interval 시작  → Interval마다 state변경 → 리렌더링 → 모든 함수 재생성 과정 반복
+4. 모든 함수가 재생성되는 과정을 생략하기 위해서 useCallback을 사용
+
+* useCallback(() => {}, [])의 dependency에는 값이 변경될 때 함수를 재생성해야 하는 state를 명시해야 한다.
+dependency에 값이 있으면 해당 state의 값이 변경될 때만 콜백 함수를 재생성한다.
+
+** 함수가 새로 생성되는 것은 메모리에 큰 영향을 끼치지 않는다.
+
+* useMemo(() => {}, [])의 dependency에는 값이 변경될 때 함수를 실행하는 state를 명시해야 한다.
+dependency에 값이 있으면 해당 state의 값이 변경될 때만 콜백 함수를 실행하고, dependency가 비어있으면 렌더링마다 함수를 실행한다.
+
+참고: [벨로퍼트](https://react.vlpt.us/basic/17-useMemo.html)
 
 ### 21.12.06.
 
