@@ -1,3 +1,13 @@
+### 21.12.08.
+
+
+- input에서 value를 가져올 때 매개변수를 입력하는 또 다른 방법
+```
+  const onChange = ({target: {value}}) => {
+    setInputValue(value);
+  };
+```
+
 ### 21.12.07.
 
 성능 최적화 (리렌더링 시 함수가 새로 생성되는 것을 방지하기 위해 useCallback 사용)
