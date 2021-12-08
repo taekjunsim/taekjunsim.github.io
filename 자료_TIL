@@ -8,6 +8,55 @@
   };
 ```
 
+- 배열에 element(요소)를 추가하는 방법은 여러가지가 있다.
+
+그 중에서 push, splice, slice를 비교해보려 한다. 핵심은 원본 배열의 오염 여부다.
+
+1. slice
+```
+const array = [1, 2, 3, 4];
+const newArr = [a, b, c, d];
+
+const result = array.slice(0, array.length), ...newArr;
+const spreadOperator = [array.slice(0, array.length), ...newArr];
+
+console.log(array) // [1, 2, 3, 4]
+console.log(result) // 1, 2, 3, 4, [a, b, c, d]
+console.log(spreadOperator) // [1, 2, 3, 4, a, b, c, d]
+```
+불변성이 지켜지기 때문에 원본 배열이 오염되지 않는다.
+
+2. push
+```
+const array = [1, 2, 3, 4];
+const newArr = [a, b, c, d];
+
+const result = array.push(newArr);
+const spreadOperator = array.push(...newArr);
+
+console.log(array) // [1, 2, 3, 4, [a, b, c, d]]
+console.log(result) // [1, 2, 3, 4, [a, b, c, d]]
+console.log(spreadOperator) // [1, 2, 3, 4, a, b, c, d]
+```
+불변성이 지켜지지 않아 원본 배열이 오염된다.
+
+3. splice
+```
+const array = [1, 2, 3, 4];
+const newArr = [a, b, c, d];
+
+const result = array.splice(array.length, 0, newArr);
+const spreadOperator = array.splice(array.length, 0, ...newArr);
+
+console.log(array) // [1, 2, 3, 4, [a, b, c, d]]
+console.log(result) // [1, 2, 3, 4, [a, b, c, d]]
+console.log(spreadOperator) // [1, 2, 3, 4, a, b, c, d]
+```
+
+push와 마찬가지로 불변성이 지켜지지 않아 원본 배열이 오염된다.
+
+
+
 ### 21.12.07.
 
 성능 최적화 (리렌더링 시 함수가 새로 생성되는 것을 방지하기 위해 useCallback 사용)
