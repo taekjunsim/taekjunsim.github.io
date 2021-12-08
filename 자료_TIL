@@ -161,6 +161,7 @@ outer();
 
   topSalary(salaries);
   
+  참고: [벨로퍼트](https://ko.javascript.info/destructuring-assignment#ref-585)
 
 - 쿼리 : 데이터베이스(서버)에 데이터를 요청하는 행위
 
