@@ -1,6 +1,34 @@
-### 21.12.08.
-https://www.wrike.com/workspace.htm?acc=2515414#/home
+### 21.12.09.
 
+
+1. literal type
+string > literal (특정 스트링 타입)
+
+type Greeting = "Hello"
+
+let greeting: Greeting
+greeting = "Hello" // OK
+greeting = "Hi"    // Error: Type '"Hi"' is not assignable to type '"Hello"'
+
+1) Greeting이라는 literal type을 선언
+2) literal type의 값은 Hello 
+3) greeting 변수에 Greeting type을 선언
+4) greeting 변수에 Hello를 할당
+5) greeting 변수에 Hi를 할당
+
+* literal type에는 string 외의 타입은 value를 할당할 수 없겠네?
+* union type, type guards와 함께 사용하면 범용성이 좋아진다.
+
+2. keyof
+객체의 key 값을 union literal type의 값으로 변환하는 operator
+
+3. typeof
+타입이 선언되지 않은 객체의 key 값을 union literal type의 값으로 변환하는 operator
+
+
+
+
+### 21.12.08.
 
 - 구조분해할당
 
