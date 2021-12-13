@@ -312,7 +312,8 @@ https://velog.io/@_jouz_ryul/CRA%EB%A1%9C-typescript-%EA%B0%9C%EB%B0%9C%ED%99%98
 - npm i -D eslint eslint-plugin-react @typescript-eslint/parser
 
 1-1) eslint
-eslint 라이브러리
+eslint - 문법 오류 또는 안티 패턴을 찾아주는 정적 분석 도구
+- 코드 스타일과 팀원 유무에 관계없이 설치하는 것을 권장한다.
 
 1-2) eslint가 react의 JSX 문법을 인식하도록 만드는 플러그인
 eslint-plugin-react
@@ -333,8 +334,8 @@ eslint 설정 - 블로그 참고
 .eslintrc 파일 생성
 
 3. prettier
-
-- prettier: 스타일을 통일시키는 formatter
+- prettier: 코드의 스타일을 관리하는 코드 포매터
+- 본인만의 코드 스타일이 있고, 혼자서 진행하는 토이 프로젝트에는 굳이 prettier를 설치할 이유가 없다.
 
 prettier 설치
 npm i -D prettier eslint-config-prettier eslint-plugin-prettier
