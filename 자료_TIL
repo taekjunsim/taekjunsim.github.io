@@ -1,3 +1,7 @@
+### 21.12.14.
+highcharts 학습, ethermine api, ethereum api 사용법 숙지
+
+
 ### 21.12.13.
 블록체인, 이더리움 특징 정리
 
@@ -29,7 +33,7 @@ greeting = "Hi"    // Error: Type '"Hi"' is not assignable to type '"Hello"'
 타입이 선언되지 않은 객체의 key 값을 union literal type의 값으로 변환하는 operator
 
 
-
+        
 
 ### 21.12.08.
 
