@@ -3,7 +3,7 @@
 
 * 기본 설정
 
-npm i ws (또는 wss 모듈 설치)
+npm i ws (또는 wss 모듈 설치) 
 npm i @types/node
 
 npm i typescript 
