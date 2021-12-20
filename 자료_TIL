@@ -1,3 +1,75 @@
+### 21.12. 20.
+
+TCP/IP -> HTTP -> Web Socket 
+                    -> socket.io (라이브러리)
+         -> net.Socket
+
+1. Web Socket이란?
+- ws프로토콜을 기반으로 클라이언트와 서버 사이에 지속적인 양방향 통신을 가능하게 하는 API
+
+브라우저는 서버가 직접 보내는 데이터를 받아들일 수 있고, 사용자가 다른 웹사이트로 이동하지 않아도 최신 데이터가 적용된 웹을 볼 수 있게 해줍니다. 웹에서도 채팅이나 게임, 실시간 주식차트와 같은 실시간이 요구되는 응용프로그램의 개발을 한층 효과적으로 구현할 수 있고, 가상화폐의 분산화 기술의 핵심도 WebSocket으로 구현할 수 있습니다.
+
+출처: https://choseongho93.tistory.com/266 [TROLL]
+
+:: 과정
+1. 웹 소켓 연결 설정을 하기 위해 클라이언트와 서버간에 특정 HTTP 기반의 핸드셰이크가 교환된다. (한 번의 요청과 응답)
+2. 교환이 성공하면 이전에 설정된 TCP 연결을 사용하여 응용 프로그램 계층(OSI 7계층) 프로토콜이 HTTP에서 웹소켓(ws)으로 전환된다. (연결 된 이후에도 연결을 할 때 사용했던 포트인 80과 443포트를 이용)
+→ 기존의 TCP 연결은 유지된 채 HTTP에서 ws 프로토콜로 전환
+3. 웹 소켓 연결이 닫힐 때까지 데이터를 주고 받을 수 있다.
+4. 클라이언트와 서버는 메세지라는 개념으로 데이터를 주고 받는다.
+
+참고: https://kellis.tistory.com/65
+
+:: 핵심
+1. 클라이언트에 의해 요청을 받는 방식이 아니다.
+2. 서버가 내용(메세지)을 클라이언트에게 보내는 표준화된 방식을 제공한다.
+
+* 프로토콜이란 무엇인가?
+for two endpoints to be able to talk to each other they should both follow a set of rules. in computer these set of rules is called protocol.
+두 엔드포인트가 서로 대화할 수 있으려면 두 엔드포인트 모두 일련의 규칙을 따라야 한다. 컴퓨터에서는 이러한 규칙들을 프로토콜이라고 부른다. 
+
+* HTTP 통신과 Socket통신은 어떤 차이가 있는가?
+결론: 통신에는 Socket이 필요하기 때문에, HTTP 통신 또한 Socket 통신을 기반으로 한다.
+
+* 그렇다면 Socket은 무엇인가?
+네트워크 환경에 연결할 수 있게 만들어진 연결부를 Socket이라고 한다. 아이피 주소와 포트 번호의 조합으로 이루어져 있으며 엔드포인트를 의미한다. 
+
+예로 http://www.naver.com:80으로 접근하면 DNS에 의해 202.43.54.222 IP가 반환되고 HTTP 프로토콜을 이용하여 반환된 203.43.54.222 IP의 80포트에 매핑된 웹 서비스에 접근을 시도하게 됩니다. 이 때  http://202.43.54.222:80가 Socket이다.
+
+정리하면, Socket은 TCP/IP에서 데이터를 통신하기 위해 필요한 것이고, Port는 데이터 패킷이 들어오는 / 나가는 곳이 됩니다.
+
+참고: https://osc131.tistory.com/7
+
+* TCP와 HTTP, Web Socket은 어떤 관계인가?
+**OSI 7계층에 대한 선행학습이 필요하다.
+
+HTTP itself can't be used to transport information to/from a remote end point. 
+HTTP 자체만으로는 엔드 포인트를 이용해서 정보를 전송할 수 없다.
+
+it relies on an underlying protocol which in HTTP's case is TCP.
+그래서 HTTP에서 엔드 포인트를 이용하여 정보를 전송하는 역할을 하는 것은 기본 프로토콜인 TCP이다.
+
+HTTP는 TCP를 기반으로 만들어진 프로토콜이라 TCP 상에서 동작하는 소켓을 주로 사용하는데, 이를 "TCP 소켓" 또는 "TCP/IP 소켓"이라고 부릅니다. (UDP에서 동작하는 소켓은 "UDP 소켓"이라고 합니다.)
+
+참고: https://recipes4dev.tistory.com/153
+
+TCP를 기반으로 만들어진 HTTP에서 Web Socket API를 이용하여 핸드쉐이크하고, 그 결과 ws 프로토콜로 전환되어 양방향 통신이 이루어진다.
+
+참고: https://stackoverflow.com/questions/15108139/difference-between-socket-programming-and-http-programming/47637847#47637847
+
+
+
+* net.socket
+HTTP를 거치지 않고 TCP에서 직접 net 모듈로 통신을 가능하게 하는 방법
+
+TCP 서버가 바닐라 자바스크립트라면, HTTP는 React나 Vue 같은 프레임워크 또는 라이브러리라고 할 수 있다.
+경우에 따라 바닐라 자바스크립트로 코드를 짜야할 때가 있듯이, 트래픽에 극도로 민감하고, 패킷 등 보안에 신경을 써야 할 때 TCP 단계에서부터 서버를 만들어 사용하기도 한다. 
+
+이 때 TCP 단계에서 직접 net 모듈로 클라이언트와 서버를 연결시키고, 단방향 또는 양방향 통신을 임의로 결정하여 데이터를 전송할 수 있다.
+
+** TCP 서버라고해서 4계층에서 바로 연결이 되는 것은 아니고 연결 자체는 7계층에서 이루어진다.
+** TCP 소켓을 사용하여 직접 HTTP 서버를 구축하기 위해서는 HTTP 사양(RFC2616)에 따라 메세지를 인코딩하고 디코딩하는 과정을 거쳐야 한다.
+
 ### 21.12.16.
 웹소켓 학습
 
