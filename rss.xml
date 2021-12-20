@@ -1,4 +1,362 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FODI's blog]]></title><description><![CDATA[do what I can, make it possible]]></description><link>https://taekjunsim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Dec 2021 09:31:27 GMT</lastBuildDate><item><title><![CDATA[useCallback과 useMemo]]></title><description><![CDATA[useCallback은 콜백함수를 반환한다.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FODI's blog]]></title><description><![CDATA[do what I can, make it possible]]></description><link>https://taekjunsim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 20 Dec 2021 09:39:57 GMT</lastBuildDate><item><title><![CDATA[Web Socket]]></title><description><![CDATA[Web Socket은 ws프로토콜을 기반으로 양방향 통신을 가능하게 하는 API…]]></description><link>https://taekjunsim.github.io/develop/websocket/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/websocket/</guid><pubDate>Mon, 20 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Web Socket은&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;ws프로토콜을 기반으로 양방향 통신을 가능하게 하는 API이다.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;클라이언트는 &lt;strong&gt;서버가 보내는 데이터&lt;/strong&gt;를 받아들일 수 있고, &lt;strong&gt;사용자가 페이지를 이동하지 않아도 최신 데이터가 적용된 웹을 볼 수 있다.&lt;/strong&gt; 채팅이나 게임, 실시간 주식차트 외에도 가상화폐의 분산화 기술의 핵심도 WebSocket으로 구현할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;Web Socket으로 양방향 통신이 이루어지는 과정&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;웹 소켓을 연결하기 위해 HTTP 기반의 핸드셰이크가 이루어진다. (한 번의 요청과 응답)&lt;/li&gt;
+&lt;li&gt;교환이 성공하면 기존의 TCP 연결은 유지된 채 HTTP에서 ws프로토콜로 전환된다. 그러므로 연결 된 이후에도 연결을 할 때 사용했던 80포트와 443포트를 이용할 수 있다.&lt;/li&gt;
+&lt;li&gt;웹 소켓 연결이 닫힐 때까지 데이터를 주고 받을 수 있다.&lt;/li&gt;
+&lt;li&gt;클라이언트와 서버는 메세지라는 개념으로 데이터를 주고 받는다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5&gt;주의사항&lt;/h5&gt;
+&lt;p&gt;** 클라이언트에 의해 요청을 받는 방식이 아니다.&lt;br&gt;
+** 서버가 메세지(데이터)를 클라이언트에게 보내는 표준화된 방식을 제공한다.&lt;/p&gt;
+&lt;h5&gt;기본 설정&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ws 모듈 설치&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm i ws&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;node에서 타입스크립트 적용하기&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm i @types/node&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm i typescript&lt;/code&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm i ts-node-dev ts-node&lt;/code&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm i @types/express @types/node&lt;/code&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;node로 서버 설정하기&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;server.ts&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 1) ws 모듈 가져오기
+const wsModule = require(&quot;ws&quot;);
+
+export default function ServerFn(port) {
+  // 2) WebSocket 서버의 Instance 생성
+  const ws = new wsModule.Server({
+    // server: HTTPServer 입력
+    port: port
+  });
+
+  console.log(&quot;WebSocket Initialized&quot;, port);
+
+  // 3) 클라이언트에 연결됐을 때 호출
+  ws.on(&quot;connection&quot;, (ws, request) =&gt; {
+    // 4) 클라이언트로부터 메시지를 수신했을 때 호출
+    ws.on(&quot;message&quot;, (message) =&gt; {
+      console.log(&quot;received: %s&quot;, message);
+      // 클라이언트에게 보낼 메세지
+      ws.send(&quot;Good, Nice to meet you, I am server&quot;);
+    });
+  });
+
+  // 5) 연결이 종료됐을 때 호출
+  ws.on(&quot;close&quot;, (error) =&gt; {
+    console.log(&quot;webserver close&quot;, error);
+  });
+
+  // 6) 에러가 발생했을 때 호출
+  ws.on(&quot;error&quot;, (error) =&gt; {
+    console.log(error);
+  });
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Server파일에 대한 부연 설명
+&lt;ul&gt;
+&lt;li&gt;ServerFn 함수를 생성할 때 port번호를 매개변수로 입력하여 index.ts에서 함수를 호출할 때 포트번호를 인자로 입력할 수 있도록 설정&lt;/li&gt;
+&lt;li&gt;connenction의 매개변수 request를 통해 연결된 클라이언트의 IP를 확인할 수 있다.&lt;/li&gt;
+&lt;li&gt;send 메서드는 client와 server 모두 사용 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;** server에서 찍는 console.log는 서버의 console에서 확인 가능하다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;index.ts&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import ServerFn from &quot;./jsserver&quot;;
+
+// 포트 번호
+ServerFn(1234);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5&gt;React로 클라이언트 설정하기&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;client.ts&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import React, {useRef} from &quot;react&quot;;
+import &quot;./App.css&quot;;
+
+function Client() {
+  // 1) 웹소켓 클라이언트 객체 생성
+  let ws = new WebSocket(&quot;ws://localhost:1234/ws&quot;);
+
+  // 2-1) 서버와 연결됐을 때 호출
+  ws.onopen = () =&gt; {
+    console.log(&quot;connected!!&quot;);
+  };
+
+  let count = useRef(1);
+
+  const sendMessage = () =&gt; {
+    // 2-2) 서버에 메세지 보내기
+    if(ws.readyState === ws.OPEN){
+      ws.send(`증가하는 숫자를 보냅니다 =&gt; ${count.current}`);
+      count.current++;
+    } else {
+      alert(&quot;연결된 웹소켓 서버가 없습니다.&quot;);
+    }
+
+    // 2-3) 서버에서 보낸 메세지를 수신했을 때 호출
+    ws.onmessage = (evt) =&gt; {
+      console.log(evt.data);
+    };
+  };
+
+  // 2-4) 연결이 종료됐을 때 호출
+  const disconnect = () =&gt; {
+    if(ws.readyState === ws.OPEN) {
+      ws.close();
+      console.log(&apos;disconnected&apos;);
+    } else {
+      alert(&quot;연결된 웹소켓 서버가 없습니다.&quot;);
+    }
+  }
+
+  // 2-5) 에러가 발생했을 때 호출
+  ws.onerror = (error) =&gt; {
+    console.log(error);
+  }
+
+  return (
+    &amp;lt;div className=&quot;App&quot;&gt;
+      &amp;lt;header className=&quot;App-header&quot;&gt;
+        {/* &amp;lt;button onClick={connect}&gt;연결 하기&amp;lt;/button&gt; */}
+        &amp;lt;button onClick={sendMessage}&gt;메세지 보내기&amp;lt;/button&gt;
+        &amp;lt;button onClick={disconnect}&gt;연결 끊기&amp;lt;/button&gt;
+      &amp;lt;/header&gt;
+    &amp;lt;/div&gt;
+  );
+
+}
+
+export default Client;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h5&gt;내용 정리&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;프로토콜이란 무엇인가?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;엔드포인트 간에 통신이 이루어지려면 각 &lt;code class=&quot;language-text&quot;&gt;엔드포인트는 일련의 규칙&lt;/code&gt;을 따라야 한다. 이러한 규칙을 프로토콜이라고 한다.&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HTTP 통신과 Socket통신에는 어떤 차이가 있는가?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;통신에는 Socket이 필요하기 때문에, &lt;code class=&quot;language-text&quot;&gt;HTTP 통신 또한 Socket 통신이다.&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;그렇다면 Socket은 무엇인가?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;아이피 주소와 포트 번호의 조합으로 이루어져 있으며, &lt;code class=&quot;language-text&quot;&gt;엔드포인트를 의미&lt;/code&gt;한다. 네트워크 환경에 연결할 수 있게 만들어진 연결부라고도 한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;예를 들어,
+http://www.naver.com:80으로 접근하면
+DNS에 의해 202.43.54.222 IP가 반환되고,
+HTTP 프로토콜을 이용하여 반환된 203.43.54.222 IP의 80포트에
+매핑된 웹 서비스에 접근을 시도한다.
+이 때 http://202.43.54.222:80가 Socket이다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;TCP와 HTTP, Web Socket은 어떤 관계인가?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;한 줄 요약: TCP를 기반으로 만들어진 HTTP에서, Web Socket API를 이용하면 ws프로토콜로 전환되어 양방향 통신이 이루어진다.&lt;/li&gt;
+&lt;li&gt;HTTP 자체만으로는 소켓을 이용해서 데이터를 전달할 수 없기 때문에 TCP 상에서 동작하는 소켓을 주로 사용하는데, 이를 “TCP 소켓” 또는 “TCP/IP 소켓”이라고 부른다. (UDP에서 동작하는 소켓은 “UDP 소켓”이라고 한다.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;net.socket이란?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTTP를 거치지 않고 TCP에서 net 모듈로 통신을 가능하게 하는 방법을 말한다.&lt;/li&gt;
+&lt;li&gt;TCP 서버가 바닐라 자바스크립트라면, HTTP는 React나 Vue 같은 프레임워크 또는 라이브러리라고 할 수 있다.&lt;/li&gt;
+&lt;li&gt;경우에 따라 바닐라 자바스크립트로 코드를 짜야할 때가 있듯이, 트래픽에 극도로 민감하고, 패킷 등 보안에 신경을 써야 할 때 TCP 단계에서부터 서버를 만들어 사용하기도 한다.&lt;/li&gt;
+&lt;li&gt;이 때 TCP 단계에서 직접 net 모듈로 클라이언트와 서버를 연결시키고, 단방향 또는 양방향 통신을 임의로 결정하여 데이터를 전송할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;** TCP 서버라고해서 4계층에서 바로 연결이 되는 것은 아니고 연결 자체는 7계층에서 이루어진다.&lt;br&gt;
+** TCP 소켓을 사용하여 직접 HTTP 서버를 구축하기 위해서는 HTTP 사양(RFC2616)에 따라 메세지를 인코딩하고 디코딩하는 과정을 거쳐야 한다.&lt;/p&gt;
+&lt;p&gt;끝!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://choseongho93.tistory.com/266&quot;&gt;TROLL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://kellis.tistory.com/65&quot;&gt;Flying Whale&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://curryyou.tistory.com/348&quot;&gt;카레유&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://osc131.tistory.com/7&quot;&gt;OSC131&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://recipes4dev.tistory.com/153&quot;&gt;뽀따&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/15108139/difference-between-socket-programming-and-http-programming/47637847#47637847&quot;&gt;stackoverflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Destructuring assignment]]></title><description><![CDATA[Destructuring assignment…]]></description><link>https://taekjunsim.github.io/develop/destructuring/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/destructuring/</guid><pubDate>Thu, 09 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Destructuring assignment란&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;구조 분해 할당, 즉 배열 또는 객체의 구조를 분해하여 변수에 할당하는 것을 의미한다.&lt;/strong&gt;
+구조 분해 할당은 설명을 읽는 것보다 코드를 보고 직접 따라 쳐보는 것이 더욱 효과적인 학습 방법이므로 궁금한 건 직접 코드로 확인해보자.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;배열&lt;/strong&gt;을 구조 분해 할당하는 기본적인 형태를 먼저 살펴보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const array = [1, 2, 10, 4, 6, 7, 34];
+
+const [a, b, c] = array; // 구조 분해 할당
+
+console.log(a, b, c) // 1, 2, 10&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;** let으로 선언해도 무방하다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;const [ a, b, c ] = array&lt;/strong&gt;를 풀어서 설명하면 아래와 같다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const a = array[0];
+const b = array[1];
+const c = array[2];&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 응용을 해보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const array = [1, 2, 10, 4, 6, 7, 34];
+
+const [d, , f] = array;
+
+console.log(d, f) // 1, 10&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;spread operator를 사용할 수도 있고,&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const [g, h, ...i] = array;
+
+console.log(g, h, i) // 1, 2, [10, 4, 6, 7, 34]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;기본값을 설정할 수도 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let [firstName, surname] = [];
+
+console.log(firstName); // undefined
+console.log(surname); // undefined&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;아무 값도 입력하지 않으면 undefined가 반환되고,&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let [name = &apos;Guest&apos;, job)] = [&apos;fodi&apos;];
+console.log(nickname); // fodi
+console.log(job); // undefined&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;prompt에서 받아오는 값을 기본값으로 사용할 수도 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let [name = &apos;Guest&apos;, job = prompt(&apos;직업을 입력하세요&apos;)] = [&apos;fodi&apos;];
+console.log(nickname); // fodi
+console.log(job); // prompt에서 받아온 값&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다음은 &lt;strong&gt;객체&lt;/strong&gt;를 구조 분해 할당 해보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const basic = {
+  &apos;nickname&apos;: &apos;fodi&apos;,
+  &apos;job&apos;: &apos;developer&apos;,
+}
+
+const {nickname, job} = basic;
+
+console.log(nickname); // fodi
+console.log(job); // developer&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;const {nickname, job} = basic&lt;/strong&gt;을 풀어서 설명하면 아래와 같다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const nickname = basic.nickname;
+const job = basic.job;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;기본값을 설정하여 key값을 추가할 수도 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let bedOptions:any = {
+&apos;title&apos;: &apos;menu&apos;,
+};
+
+let {width: x = 200, height: y = 400} = bedOptions;
+
+console.log(x); // 200
+console.log(y); // 400&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 코드는
+객체에 key값과 value값을 할당하는 ①번 코드, 그리고 객체의 value값을 각각의 변수에 할당하는 ②번 코드로 나누어 진다는 것을 확인할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;① let {width = 200, height = 400} = bedOptions;
+② let {width:x, height:y} = bedOptions;
+
+let x = bedOptions.width;
+let y = bedOptions.height;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;단, value값이 이미 할당된 key값에는 기본값을 입력하더라도 value값이 재할당되지 않는다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let tableOptions = {
+&apos;title&apos;: &apos;menu&apos;,
+&apos;width&apos;: 100,
+&apos;height&apos;: 200,
+}
+
+let {width: w = 200, height: h = 400} = tableOptions;
+
+console.log(w); // 100
+console.log(h); // 200&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그 외에 배열과 마찬가지로 spread operator를 활용할 수도 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let {title, ...others} = tableOptions;
+
+console.log(title, others); // menu, {width: 100, height: 200};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let options = {
+  size: {
+    width: 100,
+    height: 200
+  },
+  items: [&quot;Cake&quot;, &quot;Donut&quot;],
+  extra: true
+};
+
+let { size: {width} } = options;
+
+console.log(width); // 100
+console.log(size); // error&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;매개변수에 응용&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const test = ({nickname, job, gender = &apos;male&apos;}) =&gt; {
+  console.log(nickname, job, gender); // fodi, developer, male
+}
+
+const outer = () =&gt; {
+  const obj = {
+    &apos;nickname&apos; : &apos;fodi&apos;,
+    &apos;job&apos; : &apos;developer&apos;,
+  }
+
+  test(obj);
+}
+
+outer();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;기본값을 입력해줘야 예상치 못한 error를 방지할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const test = ({nickname, job, gender = &apos;male&apos;}) =&gt; {
+  console.log(nickname, job, gender); // fodi, developer, male
+}
+
+const outer = () =&gt; {
+  const obj = {
+    &apos;job&apos; : &apos;developer&apos;,
+  }
+
+  test(obj);
+}
+
+outer();&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;인자(obj)에는 nickname이 없는데 매개변수에는 있으니 error를 반환&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let salaries = {
+&quot;John&quot;: 100,
+&quot;Pete&quot;: 300,
+&quot;Mary&quot;: 250
+};
+
+const topSalary = (salaries) =&gt; {
+let max:any = 0;
+let maxName:any = null;
+
+    // [
+    //   [&apos;John&apos;, 100],
+    //   [&apos;Pete&apos;, 300],
+    //   [&apos;Mary&apos;, 250]]
+    // ]
+
+    for(const [name, salary] of Object.entries(salaries)) {
+      if (max &amp;lt; salary) {
+        max = salary;
+        maxName = name;
+      }
+    }
+
+    console.log(max, maxName);
+
+}
+
+topSalary(salaries);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://ko.javascript.info/destructuring-assignment#ref-585&quot;&gt;벨로퍼트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[useCallback과 useMemo]]></title><description><![CDATA[useCallback은 콜백함수를 반환한다.
 useCallback(() => {}, [])에서 deps([])에 전달한 state의 값이 변하면 함수(() => {}) 자체를 반환한다. 함수를 재선언하지 않고 재사용하고 싶을 때 사용하는 method…]]></description><link>https://taekjunsim.github.io/develop/useCallback/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/useCallback/</guid><pubDate>Tue, 07 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;useCallback은&lt;/h4&gt;
 &lt;p&gt;콜백함수를 반환한다.
 &lt;br&gt;useCallback(() =&gt; {}, [])에서 deps([])에 전달한 state의 값이 변하면 함수(() =&gt; {}) 자체를 반환한다. &lt;strong&gt;함수를 재선언하지 않고 재사용하고 싶을 때 사용하는 method다.&lt;/strong&gt; 또는 특정 상황에서만 재선언하고 싶을 때 사용한다.&lt;/p&gt;
@@ -92,7 +450,7 @@ export default App;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const count = useMemo(() =&gt; countActiveUsers(users), [users]);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;useMemo의 deps에 포함된 users state의 값이 변하지 않는다면 countActiveUsers 함수는 호출되지 않는다. 즉, users &lt;strong&gt;state의 값이 변할 때만&lt;/strong&gt; countActiveUsers &lt;strong&gt;함수를 호출하고 싶을 때 useMemo가 사용&lt;/strong&gt;된다.&lt;/p&gt;
 &lt;p&gt;끝!&lt;/p&gt;
-&lt;p&gt;참고&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://react.vlpt.us/basic/17-useMemo.html&quot;&gt;벨로퍼트&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://leehwarang.github.io/2020/05/02/useMemo&amp;#x26;useCallback.html&quot;&gt;이화랑 블로그&lt;/a&gt;&lt;/li&gt;
@@ -252,36 +610,25 @@ const test = function () {
 &lt;h4&gt;package.json 파일 만들기&lt;/h4&gt;
 &lt;p&gt;:: Webpack을 설치하려면 우선 package.json파일이 있어야 한다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm init -y&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;npm init&lt;/strong&gt;&lt;br&gt;
-:: &lt;code class=&quot;language-text&quot;&gt;package.json을 생성하는 명령어&lt;/code&gt;이자 새로운 프로젝트나 패키지를 만들 때 사용한다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;-y&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;npm init&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;:: &lt;code class=&quot;language-text&quot;&gt;package.json을 생성하는 명령어&lt;/code&gt;이자 새로운 프로젝트나 패키지를 만들 때 사용한다.&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;-y&lt;/strong&gt;&lt;br&gt;
 :: package.json의 내용을 &lt;code class=&quot;language-text&quot;&gt;default값으로 채워준다&lt;/code&gt;. package.json의 내용을 직접 설정하려거든 -y를 생략하면 된다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h4&gt;Webpack 설치하기&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm i -D webpack webpack-cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;i&lt;/strong&gt;&lt;br&gt;
-:: install의 줄임말&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-D&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;i&lt;/strong&gt;&lt;br&gt;
+:: install의 줄임말
+• &lt;strong&gt;-D&lt;/strong&gt;&lt;br&gt;
 :: —save-dev의 줄임말로 특정 모듈을 &lt;code class=&quot;language-text&quot;&gt;개발 과정에서만 사용&lt;/code&gt;하려고 할 때 입력한다. (해당 모듈은 release 단계에서 사용하지 않기때문에 빌드 파일이 가벼워진다.)
-&lt;br&gt;본래 build할 때 package.json의 dependencies영역에 있는 모듈을 포함한다. 하지만 -D(—save-dev)를 입력하면 devDependendices가 생성되며 dependencies에 있던 모듈이 devDependencies로 이동하는 것을 확인할 수 있다. 어플리케이션에 직접 쓰이는 것이 아니라면 devDependencies에 설치하자.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;webpack&lt;/strong&gt;&lt;br&gt;
-:: 웹팩 코어&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;webpack-cli&lt;/strong&gt;&lt;br&gt;
-:: 웹팩 커맨드라인 제어&lt;br&gt; (터미널에서 웹팩 명령어를 입력하기 위해서는 반드시 필요)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;br&gt;본래 build할 때 package.json의 dependencies영역에 있는 모듈을 포함한다. 하지만 -D(—save-dev)를 입력하면 devDependendices가 생성되며 dependencies에 있던 모듈이 devDependencies로 이동하는 것을 확인할 수 있다. 어플리케이션에 직접 쓰이는 것이 아니라면 devDependencies에 설치하자.&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;webpack&lt;/strong&gt;&lt;br&gt;
+:: 웹팩 코어&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;webpack-cli&lt;/strong&gt;&lt;br&gt;
+:: 웹팩 커맨드라인 제어&lt;br&gt; (터미널에서 웹팩 명령어를 입력하기 위해서는 반드시 필요)&lt;/p&gt;
 &lt;h4&gt;Webpack.config.js 파일 만들기&lt;/h4&gt;
 &lt;p&gt;:: Webpack의 옵션을 설정하는 파일로 &lt;code class=&quot;language-text&quot;&gt;root폴더에 파일을 생성&lt;/code&gt;한다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// ./webpack.config.js
-
-const path = require(&quot;path&quot;)
+&lt;p&gt;&lt;strong&gt;webpack.config.js&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const path = require(&quot;path&quot;)
 
 module.exports = {
   entry: &apos;./src/index.js&apos;,
@@ -290,68 +637,47 @@ module.exports = {
     path: path.resolve(__dirname, &apos;dist&apos;),
   }
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;path&lt;/strong&gt;&lt;br&gt;
-:: webpack의 내장 모듈이다. 운영체제별로 구분자가 달라지는 문제를 쉽게 해결하기 위해 등장했다.
-&lt;ul&gt;
-&lt;li&gt;Window &lt;br&gt;- C:\Users\username\desktop처럼 &lt;code class=&quot;language-text&quot;&gt;\&lt;/code&gt;를 사용해서 폴더를 구분한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;Mac&lt;br&gt;- /Users/username/desktop처럼 &lt;code class=&quot;language-text&quot;&gt;/&lt;/code&gt;를 사용해서 폴더를 구분한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;entry&lt;/strong&gt; 속성&lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;path&lt;/strong&gt;&lt;br&gt;
+:: webpack의 내장 모듈이다. 운영체제별로 구분자가 달라지는 문제를 쉽게 해결하기 위해 등장했다.&lt;/p&gt;
+&lt;p&gt;• Window &lt;br&gt;- C:\Users\username\desktop처럼 &lt;code class=&quot;language-text&quot;&gt;\&lt;/code&gt;를 사용해서 폴더를 구분한다.&lt;/p&gt;
+&lt;p&gt;• Mac&lt;br&gt;- /Users/username/desktop처럼 &lt;code class=&quot;language-text&quot;&gt;/&lt;/code&gt;를 사용해서 폴더를 구분한다.&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;entry&lt;/strong&gt; 속성&lt;br&gt;
 :: 웹 자원을 변환하기 시작하는 &lt;code class=&quot;language-text&quot;&gt;JS파일의 경로를 입력&lt;/code&gt;한다. 즉, entry 속성에 입력한 파일을 기점으로 번들링을 진행한다. 위의 코드를 예로 들자면, src폴더 아래에 있는 index.js파일에 연결되지 않은 내용은 번들링에 포함되지 않는다.&lt;/p&gt;
 &lt;p&gt;자세한 내용은 &lt;a href=&quot;https://joshua1988.github.io/webpack-guide/concepts/entry.html&quot;&gt;해당 블로그&lt;/a&gt;를 참조하길 바란다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h4&gt;npm build 설정하기&lt;/h4&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// ./package.json
-
-scripts: {
+&lt;p&gt;&lt;strong&gt;package.json&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;scripts: {
   &quot;build&quot;: &quot;webpack --mode=production&quot;,
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;—mode=production&lt;/strong&gt;&lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;—mode=production&lt;/strong&gt;&lt;br&gt;
 :: webpack은 3가지 모드가 존재한다.&lt;br&gt; 개발자들이 보기 편하게 웹팩 로그나 결과물이 보이는 &lt;code class=&quot;language-text&quot;&gt;Development(개발)&lt;/code&gt;,&lt;br&gt;
 컴파일 및 번들링을 수행하며 기본적인 파일 압축 등 &lt;code class=&quot;language-text&quot;&gt;성능 최적화가 적용된 Production(배포)&lt;/code&gt;, 그리고 &lt;code class=&quot;language-text&quot;&gt;none&lt;/code&gt;이다.
-default값은 production이다.&lt;/li&gt;
-&lt;/ul&gt;
+default값은 production이다.&lt;/p&gt;
 &lt;h4&gt;번들을 포함하는 HTML을 자동으로 생성하기&lt;/h4&gt;
 &lt;p&gt;:: 원래는 번들된 CSS파일과 JS파일을 별도로 HTML파일에 추가해야 한다. 하지만 HtmlWebpackPlugin은 이 과정을 알아서 처리해준다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm i -D html-webpack-plugin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// ./webpack.config.js
-
-const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
+&lt;p&gt;&lt;strong&gt;webpack.config.js&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
 
 plugin: [
   new HtmlWebpackPlugin({
     template: &apos;./src/index.html&apos;
   })
 ]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;template&lt;/strong&gt; 속성&lt;br&gt;
-:: 지정한 HTML문서의 Template을 참고해서 HTML문서를 생성한다. Template을 입력하지 않는 경우, HTML의 기본 형태로 생성된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;entry 포인트가 여러 개인 경우(= entry 속성에 여러 개의 파일을 입력하는 경우), 하나의 HTML에 각각의 script 태그로 포함된다. &lt;code class=&quot;language-text&quot;&gt;entry 포인트로 나누는 것만으로도 code splitting이 가능&lt;/code&gt;하다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;• &lt;strong&gt;template&lt;/strong&gt; 속성&lt;br&gt;
+:: 지정한 HTML문서의 Template을 참고해서 HTML문서를 생성한다. Template을 입력하지 않는 경우, HTML의 기본 형태로 생성된다.&lt;/p&gt;
+&lt;p&gt;• entry 포인트가 여러 개인 경우(= entry 속성에 여러 개의 파일을 입력하는 경우), 하나의 HTML에 각각의 script 태그로 포함된다. &lt;code class=&quot;language-text&quot;&gt;entry 포인트로 나누는 것만으로도 code splitting이 가능&lt;/code&gt;하다.&lt;/p&gt;
 &lt;h4&gt;npm start 설정하기&lt;/h4&gt;
 &lt;p&gt;:: 이전까지는 HTML파일을 live server(VSC 플러그인)로 열어야 했다면, 이후부터는 localhost에서 확인 가능하다. 즉, 프론트엔드 개발환경에서 이러한 개발용 서버를 제공해 주는 것이 바로 &lt;code class=&quot;language-text&quot;&gt;webpack-dev-server&lt;/code&gt;이다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm i -D webpack-dev-server&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// ./package.json
-
-scripts: {
+&lt;p&gt;&lt;strong&gt;package.json&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;scripts: {
   &quot;start&quot;: &quot;webpack serve --open --mode=development&quot;,
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;여기까지만으로 &lt;code class=&quot;language-text&quot;&gt;npm start&lt;/code&gt; 명령어를 실행하여 개발용 서버를 구동할 수 있다.
 하지만, webpack-dev-server는 옵션을 설정하는 것만으로도 많은 기능을 사용할 수 있으니 맛보기로 조금만 알아보자.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// ./webpack.config.js
-
-devServer: {
+&lt;p&gt;&lt;strong&gt;webpack.config.js&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;devServer: {
   static: {
     directory: path.resolve(__dirname, &apos;dist&apos;)
   },
@@ -367,48 +693,26 @@ devServer: {
     }
   ]
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;hot&lt;/strong&gt; 속성&lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;hot&lt;/strong&gt; 속성&lt;br&gt;
 :: 모듈이 추가, 수정, 삭제될 때 새로고침할 필요 없이 런타임에 즉각 반영되는 Hot Module Replacement(HMR) 기능. 다시 말해서, 변경 내용을 확인하기 위해 새로고침을 누를 필요가 없어진다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;liveReload&lt;/strong&gt; 속성&lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;liveReload&lt;/strong&gt; 속성&lt;br&gt;
 :: 파일의 변화가 감지되었을 때 자동으로 reload/refresh하는 기능. hot 기능이 false상태이거나, watchFiles 속성과 함께 사용해야 liveReload가 정상적으로 동작한다. HMR과 유사한 기능을 한다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;watchFiles&lt;/strong&gt; 속성 &lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;watchFiles&lt;/strong&gt; 속성 &lt;br&gt;
 :: 해당 파일 혹은 폴더 내의 파일에 변화가 생기는지 관찰하는 기능을 한다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;historyApiFallback&lt;/strong&gt; 속성&lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;historyApiFallback&lt;/strong&gt; 속성&lt;br&gt;
 :: 404에러가 뜰 경우, index.html로 리다이렉트한다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;port&lt;/strong&gt; 속성 &lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;port&lt;/strong&gt; 속성 &lt;br&gt;
 :: port번호를 지정한다. 3000으로 입력할 경우, localhost:3000으로 접속할 수 있다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;proxy&lt;/strong&gt; 속성 &lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;proxy&lt;/strong&gt; 속성 &lt;br&gt;
 :: 프록시 기능&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;context&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;context&lt;/strong&gt; &lt;br&gt;
 :: URL에 지정한 텍스트(&lt;code class=&quot;language-text&quot;&gt;/api&lt;/code&gt;)가 있을 경우, 프록시 서버를 이용한다는 의미이다.
 ex. &lt;code class=&quot;language-text&quot;&gt;/api/users&lt;/code&gt;로 요청하면, 프록시 서버를 이용해서 &lt;code class=&quot;language-text&quot;&gt;http://localhost:3000/api/users&lt;/code&gt;로 요청을 전달한다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;target&lt;/strong&gt; &lt;br&gt;
+&lt;p&gt;• &lt;strong&gt;target&lt;/strong&gt; &lt;br&gt;
 :: 데이터를 받아올 API의 URL이 가상 도메인이라면 target에 해당 도메인 주소를 입력한다.&lt;br&gt;
 ex. &lt;code class=&quot;language-text&quot;&gt;https://api.twitter.com&lt;/code&gt;&lt;br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;CRA를 이용할 때는 package.json에 프록시를 설정할 수 있다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;끝!&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Proxy서버]]></title><description><![CDATA[CORS를 해결하는 과정에서 Proxy서버를 이용하는 방법에 대해 알게 되었다. 브라우저가 동일 출처 정책(Same-Origin Policy, SOP)를 지켜서 다른 출처의 리소스 접근을 금지하기 때문에,
+&lt;p&gt;• CRA를 이용할 때는 package.json에 프록시를 설정할 수 있다.&lt;/p&gt;
+&lt;p&gt;끝!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Proxy서버]]></title><description><![CDATA[CORS를 해결하는 과정에서 Proxy서버를 이용하는 방법에 대해 알게 되었다. 브라우저가 동일 출처 정책(Same-Origin Policy, SOP)를 지켜서 다른 출처의 리소스 접근을 금지하기 때문에,
 CORS…]]></description><link>https://taekjunsim.github.io/develop/proxy/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/proxy/</guid><pubDate>Fri, 22 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CORS를 해결하는 과정에서 Proxy서버를 이용하는 방법에 대해 알게 되었다.&lt;/p&gt;
 &lt;p&gt;브라우저가 동일 출처 정책(Same-Origin Policy, SOP)를 지켜서 다른 출처의 리소스 접근을 금지하기 때문에,
 CORS에러는 클라이언트(브라우저)가 데이터 서버에 직접 데이터를 요청할 때 발생한다.&lt;/p&gt;
@@ -477,8 +781,26 @@ origin을 공유하므로 CORS에러를 해결할 수 있다.&lt;/p&gt;
   .get(`/2/tweets/search/recent?query=${inputValue}`, {
   headers: { Authorization: `Bearer ${TWIT_API.BEARER_TOKEN}` },
 });&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;추가&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;proxy가 정상적으로 작동하지 않는다면 cache가 원인일 가능성이 높다. (21.12.14.)
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;해결방법&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;아래의 코드를 입력하여 package-lock.json과 node_modules를 삭제한다. &lt;br&gt;
+&lt;code class=&quot;language-text&quot;&gt;rm -r package-lock.json node_modules&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt;을 입력한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;npm start&lt;/code&gt;로 확인한다.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;끝!&lt;/p&gt;
-&lt;p&gt;참고: &lt;a href=&quot;https://www.youtube.com/watch?v=VaAWIAxvj0A&amp;#x26;ab_channel=%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9&quot;&gt;생활코딩&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[알고리즘_자릿수 더하기]]></title><description><![CDATA[문제 자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=VaAWIAxvj0A&amp;#x26;ab_channel=%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9&quot;&gt;생활코딩&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[알고리즘_자릿수 더하기]]></title><description><![CDATA[문제 자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
 예를 들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다. 제한 조건 N의 범위 : 100,000,00…]]></description><link>https://taekjunsim.github.io/algorithm/1020/</link><guid isPermaLink="false">https://taekjunsim.github.io/algorithm/1020/</guid><pubDate>Wed, 20 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제&lt;/h1&gt;
 &lt;p&gt;자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를&lt;br&gt; 만들어 주세요.
 예를 들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.&lt;/p&gt;
