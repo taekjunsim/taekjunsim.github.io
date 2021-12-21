@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FODI's blog]]></title><description><![CDATA[do what I can, make it possible]]></description><link>https://taekjunsim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 21 Dec 2021 07:43:50 GMT</lastBuildDate><item><title><![CDATA[Web Socket]]></title><description><![CDATA[Web Socket은 ws프로토콜을 기반으로 양방향 통신을 가능하게 하는 API…]]></description><link>https://taekjunsim.github.io/develop/websocket/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/websocket/</guid><pubDate>Mon, 20 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Web Socket은&lt;/h4&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FODI's blog]]></title><description><![CDATA[do what I can, make it possible]]></description><link>https://taekjunsim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 21 Dec 2021 08:19:40 GMT</lastBuildDate><item><title><![CDATA[Web Socket]]></title><description><![CDATA[Web Socket은 ws프로토콜을 기반으로 양방향 통신을 가능하게 하는 API…]]></description><link>https://taekjunsim.github.io/develop/websocket/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/websocket/</guid><pubDate>Mon, 20 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Web Socket은&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;ws프로토콜을 기반으로 양방향 통신을 가능하게 하는 API이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;클라이언트는 &lt;strong&gt;서버가 보내는 데이터&lt;/strong&gt;를 받아들일 수 있고, &lt;strong&gt;사용자가 페이지를 이동하지 않아도 최신 데이터가 적용된 웹을 볼 수 있다.&lt;/strong&gt; 채팅이나 게임, 실시간 주식차트 외에도 가상화폐의 분산화 기술의 핵심도 WebSocket으로 구현할 수 있다.&lt;/li&gt;
@@ -382,6 +382,112 @@ HTTP 프로토콜을 이용하여 반환된 203.43.54.222 IP의 80포트에
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h5&gt;설정&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Root폴더에 .prettierrc 파일을 생성하여 아래의 옵션 중 필요한 내용을 입력한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;printWidth&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;한 줄에 들어갈 수 있는 글자 수 제한
+&lt;ul&gt;
+&lt;li&gt;ex) &lt;code class=&quot;language-text&quot;&gt;&quot;printWidth&quot;: 100&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;tabWidth&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;tab 클릭 시 space로 변환하여 들여쓰기 (숫자: space 횟수)
+&lt;ul&gt;
+&lt;li&gt;ex) &lt;code class=&quot;language-text&quot;&gt;&quot;tabWidth&quot;: 2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;singleQuote&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;작은 따옴표 사용 (true: 작은 따옴표, false: 모두 허용)
+&lt;ul&gt;
+&lt;li&gt;ex) &lt;code class=&quot;language-text&quot;&gt;&quot;singleQuote&quot;: true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;jsxSingleQuote&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JSX문법 안에서 작은 따옴표 사용 (true: 작은 따옴표, false: 모두 허용)
+&lt;ul&gt;
+&lt;li&gt;ex) &lt;code class=&quot;language-text&quot;&gt;&quot;jsxSingleQuote&quot;: true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;jsxBracketSameLine&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JSX의 닫힘 괄호(&gt;)를 다음 줄로 내릴지 여부
+&lt;ul&gt;
+&lt;li&gt;ex) &lt;code class=&quot;language-text&quot;&gt;&quot;jsxBracketSameLine&quot;: false&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;bracketSpacing&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;괄호에 공백 삽입 여부 (true: 공백 삽입, false: 공백 제외)
+&lt;ul&gt;
+&lt;li&gt;ex) &lt;code class=&quot;language-text&quot;&gt;&quot;bracketSpacing&quot;: true&lt;/code&gt; // [1,2] → [ 1, 2 ]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;semi&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;세미콜론 사용 여부 (true: 사용, false: 미사용)
+&lt;ul&gt;
+&lt;li&gt;ex) &lt;code class=&quot;language-text&quot;&gt;&quot;semi&quot;: true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;arrowParens&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;매개변수가 하나일 때 화살표 함수 괄호 사용 여부 (always: 사용, avoid: 미사용)
+&lt;ul&gt;
+&lt;li&gt;ex) &lt;code class=&quot;language-text&quot;&gt;&quot;arrowParens&quot;: &quot;always&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;endOfLine&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;운영체제에 따른 EoF 포맷 설정 (Window: CRLF, 리눅스 및 Mac: LF)
+&lt;ul&gt;
+&lt;li&gt;ex) &lt;code class=&quot;language-text&quot;&gt;&quot;endOfLine&quot;: &quot;lf&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-text&quot;&gt;trailingComma&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;여러 줄을 사용할 때, 후행 콤마 사용 방식 (all: 모두 허용, es5: 사용 - 기본, none: 미사용)
+&lt;ul&gt;
+&lt;li&gt;ex) &lt;code class=&quot;language-text&quot;&gt;&quot;trailingComma&quot;: &quot;none&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h5&gt;Error&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;
