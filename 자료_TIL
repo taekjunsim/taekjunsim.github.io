@@ -1,3 +1,107 @@
+### 21.12.21.
+
+1. .vscode/settings.json
+
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true, // 저장 시 ESLint에 맞춰 자동 fix
+  },	
+  "javascript.format.enable": false,
+  "eslint.alwaysShowStatus": true,
+  "files.autoSave": "onFocusChange" // 에디터에서 
+}
+
+2. .prettierrc
+
+{
+  "printWidth": 100,  // 한 줄에 들어갈 수 있는 글자 수 제한
+  "tabWidth": 2,  // tab 클릭 시 들여쓰기 (숫자: space 횟수)
+  "singleQuote": true,  // 작은 따옴표 사용 (true: 작은 따옴표, false: 모두 허용)
+  "jsxSingleQuote": true,  // 작은 따옴표 사용 (true: 작은 따옴표, false: 모두 허용) 
+  "quoteProps": "as-needed" // 객체 속성에 쿼테이션 적용 방식 
+  "jsxBracketSameLine": false,  // JSX의 마지막 `>`를 다음 줄로 내릴지 여부 
+  "bracketSpacing": true, // 괄호에 공백 삽입 여부 (true: 공백 삽입, false: 공백 제외) ex) [1,2] → [ 1, 2 ] 
+  "semi": true, // 세미콜론 사용 여부 (true: 사용, false: 미사용)
+  "arrowParens": "always", // 매개변수가 하나일 때 화살표 함수 괄호 사용 여부 (always: 사용, avoid: 미사용) ex) (x) => x를 x => x로 변환
+  "endOfLine": "lf" // 운영체제에 따른 EoF 포맷 설정 (Window: CRLF, 리눅스 및 Mac: LF)
+  "trailingComma": "es5", // 여러 줄을 사용할 때, 후행 콤마 사용 방식 (all: 모두 허용, es5: 사용 - 기본, none: 미사용)
+}
+
+3. hasOwnProperty
+
+4. .eslintrc
+module.exports = {
+  // 사전에 정의된 전역 변수의 사용을 정의
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+  },
+
+  // 선언되지 않은 전역변수를 사용하는 경우 ESLint 경고가 발생하지 않도록 사용자의 전역 변수를 추가
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  }, 
+
+  // ESLint를 적용할 Javascript 언어의 옵션을 지정
+  parserOptions: {
+    // ECMAScript의 언어 확장 기능을 설정
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 6,
+    
+    // parser가 JS 파일을 모듈로 인식하도록 지정 (default 'script', ES6의 import/export를 활용하기 위해서는 module로 지정해야 한다.)
+    sourceType: 'module',
+  },
+
+  // Parser 설정 (default 'Espree' 외에 다른 Parser를 설정할 수 있다.)
+  parser: [
+    'babel-eslint', 
+    '@typescript-eslint/parser'
+  ],
+
+  // 플러그인을 추가
+  plugins: [
+    'react', 
+    '@typescript-eslint'
+  ],
+
+  // 플러그인에서 사용할 규칙을 별도로 설정
+  extends: [
+    'plugin:react/recommended', 
+    'airbnb'
+  ],
+
+  // 규칙을 임의로 수정
+  rules: {
+    "no-unused-vars": "error", // 사용하지않는 변수 error처리 하겠다.
+    "no-console": "off", // 콘솔로그를 사용하수 있게 꺼놓겠다.
+    "no-else-return": "error", // if문에 else 문을 사용하지 규칙을 정의한다.
+    "semi": [1, "always"],
+    "space-unary-ops": 2
+  },
+};
+
+* 플러그인 = 규칙의 집합
+* 플러그인을 추가하는 것과 규칙을 추가하는 것은 별개의 영역이다.
+* rules 
+'off' / 0 : 규칙을 사용하지 않음
+'warn' / 1 : 규칙을 경고로 처리
+'error' / 2 : 규칙을 에러로 처리
+
+
+당연한 얘기지만 browser, node 설정을 하지 않을경우 console,require 같은 사전 정의된 전역변수 환경에 있는 static 메서드를 인식할 수 없어서 에러가 발생합니다.
+
+이외에도 선언되지 않은 전역변수를 사용하는 경우 ESLint 경고가 발생하지 않도록, globals를 이용하여 사용자 전역 변수를 추가할 수 있습니다.
+
+**참고**
+- [TriplexLab](https://triplexlab.tistory.com/40)
+
 
 ### 21.12.14. 
 highcharts 학습, ethermine api, ethereum api 사용법 숙지
