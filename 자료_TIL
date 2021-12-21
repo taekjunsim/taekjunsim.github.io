@@ -14,22 +14,6 @@
   "files.autoSave": "onFocusChange" // 에디터에서 
 }
 
-2. .prettierrc
-
-{
-  "printWidth": 100,  // 한 줄에 들어갈 수 있는 글자 수 제한
-  "tabWidth": 2,  // tab 클릭 시 들여쓰기 (숫자: space 횟수)
-  "singleQuote": true,  // 작은 따옴표 사용 (true: 작은 따옴표, false: 모두 허용)
-  "jsxSingleQuote": true,  // 작은 따옴표 사용 (true: 작은 따옴표, false: 모두 허용) 
-  "quoteProps": "as-needed" // 객체 속성에 쿼테이션 적용 방식 
-  "jsxBracketSameLine": false,  // JSX의 마지막 `>`를 다음 줄로 내릴지 여부 
-  "bracketSpacing": true, // 괄호에 공백 삽입 여부 (true: 공백 삽입, false: 공백 제외) ex) [1,2] → [ 1, 2 ] 
-  "semi": true, // 세미콜론 사용 여부 (true: 사용, false: 미사용)
-  "arrowParens": "always", // 매개변수가 하나일 때 화살표 함수 괄호 사용 여부 (always: 사용, avoid: 미사용) ex) (x) => x를 x => x로 변환
-  "endOfLine": "lf" // 운영체제에 따른 EoF 포맷 설정 (Window: CRLF, 리눅스 및 Mac: LF)
-  "trailingComma": "es5", // 여러 줄을 사용할 때, 후행 콤마 사용 방식 (all: 모두 허용, es5: 사용 - 기본, none: 미사용)
-}
-
 3. hasOwnProperty
 
 
