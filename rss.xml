@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FODI's blog]]></title><description><![CDATA[do what I can, make it possible]]></description><link>https://taekjunsim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 21 Dec 2021 09:11:10 GMT</lastBuildDate><item><title><![CDATA[Web Socket]]></title><description><![CDATA[Web Socket은 ws프로토콜을 기반으로 양방향 통신을 가능하게 하는 API…]]></description><link>https://taekjunsim.github.io/develop/websocket/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/websocket/</guid><pubDate>Mon, 20 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Web Socket은&lt;/h4&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FODI's blog]]></title><description><![CDATA[do what I can, make it possible]]></description><link>https://taekjunsim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 23 Dec 2021 02:09:55 GMT</lastBuildDate><item><title><![CDATA[Develop Article]]></title><description><![CDATA[기록으로 남기고 싶은 아티클을 요약 및 정리하여 공유하는 공간입니다. Source: 카카오프로젝트100 UI, UX 그리고 디자인 개발자도 알면 좋은 UI디자인
+UI…]]></description><link>https://taekjunsim.github.io/develop/article/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/article/</guid><pubDate>Thu, 23 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기록으로 남기고 싶은 아티클을 요약 및 정리하여 공유하는 공간입니다.&lt;/p&gt;
+&lt;p&gt;Source: &lt;a href=&quot;https://velog.io/@rkdrhksdn/2020%EB%85%84-%EC%83%81%EB%B0%98%EA%B8%B0-%EC%96%91%EC%A7%88%EC%9D%98-%EA%B8%B0%EC%88%A0-%EC%95%84%ED%8B%B0%ED%81%B4-%EB%AA%A8%EC%9D%8C%EC%A7%91&quot;&gt;카카오프로젝트100&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;h3&gt;UI, UX 그리고 디자인&lt;/h3&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://joshua1988.github.io/web-development/design/ui-for-developers/#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0&quot;&gt;개발자도 알면 좋은 UI디자인&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;UI디자인에 대한 큰 틀을 파악할 수 있는 자료&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;서비스 구축 단계에서 &lt;u&gt;초기 디자인&lt;/u&gt;이란 페이지에 &lt;u&gt;필요한 기능을 정의&lt;/u&gt;하는 것이다.&lt;/li&gt;
+&lt;li&gt;빠르게 만들고 빠르게 문제를 마주하기
+&lt;ul&gt;
+&lt;li&gt;예를 들어, 화면에 표시할 사용자 데이터가 2000개인 경우? &lt;br&gt;구체적인 사항은 상상만으로는 디자인이 불가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;컨셉을 정하기&lt;/li&gt;
+&lt;li&gt;모든 디자인을 시스템화 하기&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Web Socket]]></title><description><![CDATA[Web Socket은 ws프로토콜을 기반으로 양방향 통신을 가능하게 하는 API…]]></description><link>https://taekjunsim.github.io/develop/websocket/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/websocket/</guid><pubDate>Mon, 20 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Web Socket은&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;ws프로토콜을 기반으로 양방향 통신을 가능하게 하는 API이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;클라이언트는 &lt;strong&gt;서버가 보내는 데이터&lt;/strong&gt;를 받아들일 수 있고, &lt;strong&gt;사용자가 페이지를 이동하지 않아도 최신 데이터가 적용된 웹을 볼 수 있다.&lt;/strong&gt; 채팅이나 게임, 실시간 주식차트 외에도 가상화폐의 분산화 기술의 핵심도 WebSocket으로 구현할 수 있다.&lt;/li&gt;
