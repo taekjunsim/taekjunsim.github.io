@@ -1,27 +1,89 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FODI's blog]]></title><description><![CDATA[do what I can, make it possible]]></description><link>https://taekjunsim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 23 Dec 2021 02:09:55 GMT</lastBuildDate><item><title><![CDATA[Develop Article]]></title><description><![CDATA[기록으로 남기고 싶은 아티클을 요약 및 정리하여 공유하는 공간입니다. Source: 카카오프로젝트100 UI, UX 그리고 디자인 개발자도 알면 좋은 UI디자인
-UI…]]></description><link>https://taekjunsim.github.io/develop/article/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/article/</guid><pubDate>Thu, 23 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;기록으로 남기고 싶은 아티클을 요약 및 정리하여 공유하는 공간입니다.&lt;/p&gt;
-&lt;p&gt;Source: &lt;a href=&quot;https://velog.io/@rkdrhksdn/2020%EB%85%84-%EC%83%81%EB%B0%98%EA%B8%B0-%EC%96%91%EC%A7%88%EC%9D%98-%EA%B8%B0%EC%88%A0-%EC%95%84%ED%8B%B0%ED%81%B4-%EB%AA%A8%EC%9D%8C%EC%A7%91&quot;&gt;카카오프로젝트100&lt;/a&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;h3&gt;UI, UX 그리고 디자인&lt;/h3&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[FODI's blog]]></title><description><![CDATA[do what I can, make it possible]]></description><link>https://taekjunsim.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 28 Dec 2021 05:25:49 GMT</lastBuildDate><item><title><![CDATA[Article - Leadership]]></title><description><![CDATA[기록으로 남기고 싶은 아티클을 요약 및 정리하여 공유하는 공간입니다. 개발 조직에서의 리더십: Practice and Mindset…]]></description><link>https://taekjunsim.github.io/article/skill/leadership/</link><guid isPermaLink="false">https://taekjunsim.github.io/article/skill/leadership/</guid><pubDate>Mon, 27 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;기록으로 남기고 싶은 아티클을 요약 및 정리하여 공유하는 공간입니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/deliverytechkorea/%EA%B0%9C%EB%B0%9C-%EC%A1%B0%EC%A7%81%EC%97%90%EC%84%9C%EC%9D%98-%EB%A6%AC%EB%8D%94%EC%8B%AD-practice-and-mindset-b3ca6fc45809&quot;&gt;개발 조직에서의 리더십: Practice and Mindset&lt;br&gt;
+부제: ‘팀원’들의 리더십은 어떻게 성장시켜 나갈 수 있을까?&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://joshua1988.github.io/web-development/design/ui-for-developers/#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0&quot;&gt;개발자도 알면 좋은 UI디자인&lt;/a&gt;&lt;br&gt;
-&lt;strong&gt;UI디자인에 대한 큰 틀을 파악할 수 있는 자료&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;팀원의 리더십을 성장시킬 수 있는 사소하지만 확실한 한 가지 방법&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;요약&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 글을 작성한 개발자는 standup 미팅을 리드하는 사람 외에는 수동적인 자세로 참여하는 사람들이 대부분이라, 준비되지 않은 상태로 미팅에 참여한다는 문제를 겪고 있었다. 그래서 모든 팀원이 리더십 경험을 해볼 수 있도록 프랙티스를 도입하였고, 그 결과 팀원들은 일상적인 업무공간에서 리더십을 발휘할 수 있는 기회가 생겼다.&lt;/p&gt;
+&lt;p&gt;이런 문제를 해결한다고 결과물이 눈 앞에 보이는 것도 아니지만, 개인적으로는 끊임없이 고민해서 지속적으로 더 나은 방향을 찾아야 하는 문제라고 생각한다. 마지막으로 이 글을 읽으며 가장 공감이 갔던 문단을 소개하며 마무리하겠다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;우리 팀과 조직에 맞는 리더십을 갖추기 위해서는 좋은 ‘리더’와 ‘팀’이란 무엇인지 구성원 모두가 지속적으로 고민하고, 작은 실천들을 해나가는 마음가짐에서 시작하는 것 같습니다. 물론, 이러한 의견이 이상적으로만 들릴지도 모릅니다. 다만, 고민하고 실천하는 사람들이 많은 팀과 그렇지 않은 팀은 분명히 팀워크와 성과가 다르다는 데 공감하실 거라 믿습니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://velog.io/@rkdrhksdn/2020%EB%85%84-%EC%83%81%EB%B0%98%EA%B8%B0-%EC%96%91%EC%A7%88%EC%9D%98-%EA%B8%B0%EC%88%A0-%EC%95%84%ED%8B%B0%ED%81%B4-%EB%AA%A8%EC%9D%8C%EC%A7%91&quot;&gt;카카오프로젝트100&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Article - Gatsby]]></title><description><![CDATA[기록으로 남기고 싶은 아티클을 요약 및 정리하여 공유하는 공간입니다. React밖에 모르는 당신에게. GatsbyJS한 잔 Gatsby의 장점과 SEO를 적용하는 데에 도움이 되는 plugin에 대한 자료 장점 React 기반이다. (Jekyll…]]></description><link>https://taekjunsim.github.io/article/tech/gatsby_1/</link><guid isPermaLink="false">https://taekjunsim.github.io/article/tech/gatsby_1/</guid><pubDate>Fri, 24 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;기록으로 남기고 싶은 아티클을 요약 및 정리하여 공유하는 공간입니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.banksalad.com/tech/build-a-website-with-gatsby/&quot;&gt;React밖에 모르는 당신에게. GatsbyJS한 잔&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Gatsby의 장점과 SEO를 적용하는 데에 도움이 되는 plugin에 대한 자료&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;장점&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;React 기반이다. (Jekyll은 루비 기반)&lt;/li&gt;
+&lt;li&gt;손쉽게 SEO를 적용할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;플러그인&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gatsby-plugin-react-helmet
+&lt;ul&gt;
+&lt;li&gt;meta tag 변경&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;gatsby-plugin-robots-txt
+&lt;ul&gt;
+&lt;li&gt;robot.txt 자동 생성&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;gatsby-plugin-sitemap
+&lt;ul&gt;
+&lt;li&gt;빌드 시 sitemap 자동 생성&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;gatsby-plugin-canonical-urls
+&lt;ul&gt;
+&lt;li&gt;canonical 이슈 해결&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://velog.io/@rkdrhksdn/2020%EB%85%84-%EC%83%81%EB%B0%98%EA%B8%B0-%EC%96%91%EC%A7%88%EC%9D%98-%EA%B8%B0%EC%88%A0-%EC%95%84%ED%8B%B0%ED%81%B4-%EB%AA%A8%EC%9D%8C%EC%A7%91&quot;&gt;카카오프로젝트100&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Article - UI Design]]></title><description><![CDATA[기록으로 남기고 싶은 아티클을 요약 및 정리하여 공유하는 공간입니다. 개발자도 알면 좋은 UI디자인 UI…]]></description><link>https://taekjunsim.github.io/article/design/ui/</link><guid isPermaLink="false">https://taekjunsim.github.io/article/design/ui/</guid><pubDate>Thu, 23 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;기록으로 남기고 싶은 아티클을 요약 및 정리하여 공유하는 공간입니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://joshua1988.github.io/web-development/design/ui-for-developers/#%EB%93%A4%EC%96%B4%EA%B0%80%EB%A9%B0&quot;&gt;개발자도 알면 좋은 UI디자인&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;UI의 디자인을 제작할 때 개발자가 체크할 수 있는 포인트&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;요약&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;서비스 구축 단계에서 &lt;u&gt;초기 디자인&lt;/u&gt;이란 페이지에 &lt;u&gt;필요한 기능을 정의&lt;/u&gt;하는 것이다.&lt;/li&gt;
 &lt;li&gt;빠르게 만들고 빠르게 문제를 마주하기
 &lt;ul&gt;
-&lt;li&gt;예를 들어, 화면에 표시할 사용자 데이터가 2000개인 경우? &lt;br&gt;구체적인 사항은 상상만으로는 디자인이 불가능하다.&lt;/li&gt;
+&lt;li&gt;구체적인 사항은 상상만으로는 디자인이 불가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;예를 들어, 화면에 표시할 사용자 데이터가 2000개가 넘는다면?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;컨셉을 정하기&lt;/li&gt;
 &lt;li&gt;모든 디자인을 시스템화 하기&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Web Socket]]></title><description><![CDATA[Web Socket은 ws프로토콜을 기반으로 양방향 통신을 가능하게 하는 API…]]></description><link>https://taekjunsim.github.io/develop/websocket/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/websocket/</guid><pubDate>Mon, 20 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Web Socket은&lt;/h4&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://velog.io/@rkdrhksdn/2020%EB%85%84-%EC%83%81%EB%B0%98%EA%B8%B0-%EC%96%91%EC%A7%88%EC%9D%98-%EA%B8%B0%EC%88%A0-%EC%95%84%ED%8B%B0%ED%81%B4-%EB%AA%A8%EC%9D%8C%EC%A7%91&quot;&gt;카카오프로젝트100&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Web Socket]]></title><description><![CDATA[ws프로토콜을 기반으로 양방향 통신을 가능하게 하는 API…]]></description><link>https://taekjunsim.github.io/develop/websocket/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/websocket/</guid><pubDate>Mon, 20 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p class=&quot;content-subtitle&quot;&gt;Web Socket은&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;ws프로토콜을 기반으로 양방향 통신을 가능하게 하는 API이다.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;클라이언트는 &lt;strong&gt;서버가 보내는 데이터&lt;/strong&gt;를 받아들일 수 있고, &lt;strong&gt;사용자가 페이지를 이동하지 않아도 최신 데이터가 적용된 웹을 볼 수 있다.&lt;/strong&gt; 채팅이나 게임, 실시간 주식차트 외에도 가상화폐의 분산화 기술의 핵심도 WebSocket으로 구현할 수 있다.&lt;/li&gt;
@@ -224,7 +286,7 @@ HTTP 프로토콜을 이용하여 반환된 203.43.54.222 IP의 80포트에
 &lt;li&gt;&lt;a href=&quot;https://osc131.tistory.com/7&quot;&gt;OSC131&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://recipes4dev.tistory.com/153&quot;&gt;뽀따&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/15108139/difference-between-socket-programming-and-http-programming/47637847#47637847&quot;&gt;stackoverflow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[ESLint and Prettier]]></title><description><![CDATA[ESLint…]]></description><link>https://taekjunsim.github.io/develop/eslint&amp;prettier/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/eslint&amp;prettier/</guid><pubDate>Mon, 13 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;ESLint는&lt;/h4&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[ESLint and Prettier]]></title><description><![CDATA[코드에서 자바스크립트의 문법 오류 또는 안티 패턴을 찾아주는 정적 분석 도구다. 문법 오류 등을 경고 또는 에러로 처리하여 휴먼 오류를 컴파일 단계에서 잡아준다. 코드 스타일과 팀원 유무에 관계없이 설치하는 것을 권장한다. 설치 ESLint   CRA…]]></description><link>https://taekjunsim.github.io/develop/eslint&amp;prettier/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/eslint&amp;prettier/</guid><pubDate>Mon, 13 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p class=&quot;content-subtitle&quot;&gt;ESLint는&lt;p&gt;
 &lt;p&gt;&lt;strong&gt;코드에서 자바스크립트의 문법 오류 또는 안티 패턴을 찾아주는 정적 분석 도구다.&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;문법 오류 등을 경고 또는 에러로 처리하여 휴먼 오류를 컴파일 단계에서 잡아준다.&lt;/li&gt;
@@ -556,25 +618,23 @@ HTTP 프로토콜을 이용하여 반환된 203.43.54.222 IP의 80포트에
 &lt;li&gt;&lt;a href=&quot;https://ingg.dev/eslint/&quot;&gt;INGG&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://triplexlab.tistory.com/40&quot;&gt;TriplexLab&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://technote.kr/300&quot;&gt;TechNote&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Destructuring assignment]]></title><description><![CDATA[Destructuring assignment…]]></description><link>https://taekjunsim.github.io/develop/destructuring/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/destructuring/</guid><pubDate>Thu, 09 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Destructuring assignment란&lt;/h4&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Destructuring assignment]]></title><description><![CDATA[…]]></description><link>https://taekjunsim.github.io/develop/destructuring/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/destructuring/</guid><pubDate>Thu, 09 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p class=&quot;content-subtitle&quot;&gt;Destructuring assignment는&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;구조 분해 할당, 즉 배열 또는 객체의 구조를 분해하여 변수에 할당하는 것을 의미한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;구조 분해 할당은 설명을 읽는 것보다 코드를 보고 직접 따라 쳐보는 것이 더욱 효과적인 학습 방법이므로 궁금한 건 직접 코드로 확인해보자.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;배열&lt;/strong&gt;을 구조 분해 할당하는 기본적인 형태를 먼저 살펴보자.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const array = [1, 2, 10, 4, 6, 7, 34];
-
 const [a, b, c] = array; // 구조 분해 할당
 
 console.log(a, b, c) // 1, 2, 10&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;** let으로 선언해도 무방하다.&lt;/p&gt;
+&lt;p class=&quot;comment-text&quot;&gt;* let으로 선언해도 무방하다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;const [ a, b, c ] = array&lt;/strong&gt;를 풀어서 설명하면 아래와 같다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const a = array[0];
 const b = array[1];
 const c = array[2];&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;이제 응용을 해보자.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const array = [1, 2, 10, 4, 6, 7, 34];
-
 const [d, , f] = array;
 
 console.log(d, f) // 1, 10&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -589,10 +649,12 @@ console.log(firstName); // undefined
 console.log(surname); // undefined&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;아무 값도 입력하지 않으면 undefined가 반환되고,&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let [name = &apos;Guest&apos;, job)] = [&apos;fodi&apos;];
+
 console.log(nickname); // fodi
 console.log(job); // undefined&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;prompt에서 받아오는 값을 기본값으로 사용할 수도 있다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let [name = &apos;Guest&apos;, job = prompt(&apos;직업을 입력하세요&apos;)] = [&apos;fodi&apos;];
+
 console.log(nickname); // fodi
 console.log(job); // prompt에서 받아온 값&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;다음은 &lt;strong&gt;객체&lt;/strong&gt;를 구조 분해 할당 해보자.&lt;/p&gt;
@@ -600,7 +662,6 @@ console.log(job); // prompt에서 받아온 값&lt;/code&gt;&lt;/pre&gt;&lt;/div
   &apos;nickname&apos;: &apos;fodi&apos;,
   &apos;job&apos;: &apos;developer&apos;,
 }
-
 const {nickname, job} = basic;
 
 console.log(nickname); // fodi
@@ -612,13 +673,12 @@ const job = basic.job;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let bedOptions:any = {
 &apos;title&apos;: &apos;menu&apos;,
 };
-
 let {width: x = 200, height: y = 400} = bedOptions;
 
 console.log(x); // 200
 console.log(y); // 400&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;위의 코드는
-객체에 key값과 value값을 할당하는 ①번 코드, 그리고 객체의 value값을 각각의 변수에 할당하는 ②번 코드로 나누어 진다는 것을 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;위의 코드는,
+객체에 key값과 value값을 할당하는 ①과 객체의 value값을 각각의 변수에 할당하는 ②로 나누어 진다는 것을 아래에서 확인할 수 있다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;① let {width = 200, height = 400} = bedOptions;
 ② let {width:x, height:y} = bedOptions;
 
@@ -713,11 +773,11 @@ topSalary(salaries);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://ko.javascript.info/destructuring-assignment#ref-585&quot;&gt;벨로퍼트&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[useCallback과 useMemo]]></title><description><![CDATA[useCallback은 dependency에 따라 콜백함수(() => {}) 자체를 반환한다. 반면, useMemo는 dependency에 따라 콜백함수의 return값을 반환한다. 예를 들어, 아래의 코드를 살펴보자. App.js…]]></description><link>https://taekjunsim.github.io/develop/useCallback/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/useCallback/</guid><pubDate>Tue, 07 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;useCallback은&lt;/h4&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[useCallback과 useMemo]]></title><description><![CDATA[dependency에 따라 콜백함수(() => {}) 자체를 반환한다. 반면, dependency에 따라 콜백함수의 return값을 반환한다. 예를 들어, 아래의 코드를 살펴보자. App.js ** 변수 count…]]></description><link>https://taekjunsim.github.io/develop/useCallback/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/useCallback/</guid><pubDate>Tue, 07 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p class=&quot;content-subtitle&quot;&gt;useCallback은&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;dependency에 따라 콜백함수(() =&gt; {}) 자체를 반환한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;!-- **함수를 재선언은 하지 않고, 재사용은 하고 싶을 때 사용하는 method다.** 또는 특정 상황에서만 재선언하고 싶을 때 사용한다. --&gt;
 &lt;p&gt;반면,&lt;/p&gt;
-&lt;h4&gt;useMemo는&lt;/h4&gt;
+&lt;p class=&quot;content-subtitle&quot;&gt;useMemo는&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;dependency에 따라 콜백함수의 return값을 반환한다.&lt;/strong&gt;&lt;/p&gt;
 &lt;!-- 렌더링을 할 때마다 선언과 호출이 반복되는 함수를, 특정 상황에서만 호출하고 싶을 때 사용하는 method다. --&gt;
 &lt;p&gt;예를 들어,&lt;/p&gt;
@@ -817,8 +877,8 @@ useMemo는 &lt;strong&gt;콜백함수의 return 값&lt;/strong&gt;을 반환한�
 &lt;li&gt;&lt;a href=&quot;https://leehwarang.github.io/2020/05/02/useMemo&amp;#x26;useCallback.html&quot;&gt;이화랑 블로그&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://any-ting.tistory.com/83&quot;&gt;any-ting&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://woong-jae.com/react/210826-useMemo-useCallback&quot;&gt;woong-jae&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Promise]]></title><description><![CDATA[Promise 객체란 비동기 처리에 대한 결과값을, 동기적으로 처리하기 위해 사용되는 객체다. 서버에서 데이터를 받아온다고 가정해보자.
-ajax, fetch, axios…]]></description><link>https://taekjunsim.github.io/develop/promise/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/promise/</guid><pubDate>Tue, 09 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Promise 객체란&lt;/h4&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Promise]]></title><description><![CDATA[비동기 처리에 대한 결과값을, 동기적으로 처리하기 위해 사용되는 객체다. 서버에서 데이터를 받아온다고 가정해보자.
+ajax, fetch, axios…]]></description><link>https://taekjunsim.github.io/develop/promise/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/promise/</guid><pubDate>Tue, 09 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p class=&quot;content-subtitle&quot;&gt;Promise 객체는&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;비동기 처리에 대한 결과값을, 동기적으로 처리하기 위해 사용되는 객체다.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;서버에서 데이터를 받아온다고 가정해보자.&lt;br&gt;
 ajax, fetch, axios는 모두 &lt;strong&gt;비동기를 기반으로 서버와 통신&lt;/strong&gt;한다.&lt;br&gt;
@@ -859,28 +919,30 @@ fetch가 비동기적으로 통신을 하지만, 서버에서 &lt;strong&gt;데�
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://joshua1988.github.io/web-development/javascript/promise-for-beginners/&quot;&gt;CAPTAIN PANGYO&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise&quot;&gt;MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Hoisting]]></title><description><![CDATA[Hoisting이란 코드를 실행하기 전에 실행 컨텍스트가 생성되는데, 해당 실행 컨텍스트에 등록된 모든 선언을 메모리에 저장하는 현상을 말한다. 변수는 3단계에 걸쳐 생성된다. 선언 단계 (Declaration phase…]]></description><link>https://taekjunsim.github.io/develop/hoisting/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/hoisting/</guid><pubDate>Wed, 03 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Hoisting이란&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;코드를 실행하기 전에 실행 컨텍스트가 생성되는데, 해당 실행 컨텍스트에 등록된 모든 선언을 메모리에 저장하는 현상을 말한다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;변수는 3단계에 걸쳐 생성된다.&lt;/p&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Hoisting]]></title><description><![CDATA[…]]></description><link>https://taekjunsim.github.io/develop/hoisting/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/hoisting/</guid><pubDate>Wed, 03 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p class=&quot;content-subtitle&quot;&gt;Hoisting은&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;변수 또는 함수를 최상단으로 끌어올려서 사용하는 것처럼 보이는 현상을 말한다.&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;자바스트립트 엔진은 코드를 실행하기 전에 선언된 변수 또는 함수의 정보를 수집한다. 이로 인해 코드를 실행할 때 변수 또는 함수를 최상단으로 끌어올려서 사용하는 것처럼 보인다. 하지만 실제로 최상단으로 끌어올려지는 것은 아니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;선언과 할당은 총 3단계에 걸쳐 진행된다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;선언&lt;/strong&gt; 단계 (Declaration phase)&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;변수를 실행 컨텍스트의 변수 객체에 등록한다.&lt;/li&gt;
-&lt;li&gt;스코프를 참조하는 단계&lt;/li&gt;
+&lt;li&gt;변수를 실행 컨텍스트의 변수 객체(variable environment)에 등록한다.&lt;/li&gt;
+&lt;li&gt;등록된 변수의 Reference를 메모리에 저장한다.&lt;/li&gt;
+&lt;li&gt;변수에 값은 저장되지 않은 상태이다.&lt;/li&gt;
+&lt;li&gt;스코프를 참조하는 단계이다. (대부분의 스코프는 선언 단계에서 정해진다.)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;초기화&lt;/strong&gt; 단계 (Initialization phase)&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;등록된 변수를 메모리에 저장한다.&lt;/li&gt;
-&lt;li&gt;이 단계에서 변수의 값은 메모리에 undefined로 초기화(저장)된다.&lt;/li&gt;
+&lt;li&gt;변수의 값은 메모리에 undefined로 초기화한다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;let test;
-const test2;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;할당&lt;/strong&gt; 단계 (Assignment phase)&lt;/p&gt;
 &lt;ul&gt;
@@ -888,7 +950,15 @@ const test2;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;test = 10;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 선언 단계
+
+let test;
+const test2;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// 초기화 및 할당 단계
+
+test = 10;
 test2 = 100;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h5&gt;TDZ (Temporal Dead Zone)&lt;/h5&gt;
 &lt;p&gt;&lt;strong&gt;스코프를 참조하는 지점(선언 단계)부터 초기화 단계 직전까지의 구간&lt;/strong&gt;을 말한다.&lt;br&gt;
@@ -981,7 +1051,8 @@ const test = function () {
 &lt;li&gt;&lt;a href=&quot;https://ui.toast.com/weekly-pick/ko_20191014&quot;&gt;HANAMON&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://noogoonaa.tistory.com/78&quot;&gt;noogoona&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://ui.toast.com/weekly-pick/ko_20191014&quot;&gt;TOASTUI&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Webpack]]></title><description><![CDATA[CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자. package.json 파일 만들기 :: Webpack을 설치하려면 우선 package.json…]]></description><link>https://taekjunsim.github.io/develop/webpack/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/webpack/</guid><pubDate>Mon, 01 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자.&lt;/p&gt;
+&lt;/ul&gt;
+&lt;p&gt;(update: 21.12.27.)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Webpack]]></title><description><![CDATA[CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자. package.json 파일 만들기 :: Webpack을 설치하려면 우선 package.json…]]></description><link>https://taekjunsim.github.io/develop/webpack/</link><guid isPermaLink="false">https://taekjunsim.github.io/develop/webpack/</guid><pubDate>Mon, 01 Nov 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;CRA를 사용하지 않고 Webpack과 Babel을 직접 설정하고 바닐라JS로 SPA를 구현해보려 한다. 우선 Webpack을 설정하는 방법부터 알아보자.&lt;/p&gt;
 &lt;h4&gt;package.json 파일 만들기&lt;/h4&gt;
 &lt;p&gt;:: Webpack을 설치하려면 우선 package.json파일이 있어야 한다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm init -y&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1175,7 +1246,7 @@ origin을 공유하므로 CORS에러를 해결할 수 있다.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;참고&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=VaAWIAxvj0A&amp;#x26;ab_channel=%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9&quot;&gt;생활코딩&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[알고리즘_자릿수 더하기]]></title><description><![CDATA[문제 자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Algorithm - 자릿수 더하기]]></title><description><![CDATA[문제 자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
 예를 들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다. 제한 조건 N의 범위 : 100,000,00…]]></description><link>https://taekjunsim.github.io/algorithm/1020/</link><guid isPermaLink="false">https://taekjunsim.github.io/algorithm/1020/</guid><pubDate>Wed, 20 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제&lt;/h1&gt;
 &lt;p&gt;자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를&lt;br&gt; 만들어 주세요.
 예를 들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.&lt;/p&gt;
@@ -1231,7 +1302,7 @@ array.reduce((accumulator, currentValue) =&gt; {
 // 1 (=accumulator), 3 (=currentValue)
 // 3 (=accumulator), 3 (=currentValue)
 // 결과적으로 반환되는 값은 6;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;끝!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[알고리즘_모의고사]]></title><description><![CDATA[문제 수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다. 1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4,…]]></description><link>https://taekjunsim.github.io/algorithm/1019/</link><guid isPermaLink="false">https://taekjunsim.github.io/algorithm/1019/</guid><pubDate>Tue, 19 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제&lt;/h1&gt;
+&lt;p&gt;끝!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Algorithm - 모의고사]]></title><description><![CDATA[문제 수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다. 1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4,…]]></description><link>https://taekjunsim.github.io/algorithm/1019/</link><guid isPermaLink="false">https://taekjunsim.github.io/algorithm/1019/</guid><pubDate>Tue, 19 Oct 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;문제&lt;/h1&gt;
 &lt;p&gt;수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 &lt;br&gt;전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.&lt;/p&gt;
 &lt;p&gt;1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, …&lt;br&gt;
 2번 수포자가 찍는 방식: 2, 1, 2, 3, 2, 4, 2, 5, 2, 1, 2, 3, 2, 4, 2, 5, …&lt;br&gt;
