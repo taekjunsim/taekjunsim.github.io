@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-category-js",
     "path": "/category/article/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"FODI's blog"}},"allMarkdownRemark":{"totalCount":3,"edges":[{"node":{"fields":{"slug":"/article/skill/leadership/"},"frontmatter":{"title":"Article - Leadership"}}},{"node":{"fields":{"slug":"/article/tech/gatsby_1/"},"frontmatter":{"title":"Article - Gatsby"}}},{"node":{"fields":{"slug":"/article/design/ui/"},"frontmatter":{"title":"Article - UI Design"}}}]}},"pageContext":{"category":"article"}},
+    "result": {"data":{"site":{"siteMetadata":{"title":"FODI's blog"}},"allMarkdownRemark":{"totalCount":3,"edges":[{"node":{"fields":{"slug":"/article/skill/leadership/"},"frontmatter":{"title":"아티클 - Leadership"}}},{"node":{"fields":{"slug":"/article/tech/gatsby_1/"},"frontmatter":{"title":"아티클 - Gatsby"}}},{"node":{"fields":{"slug":"/article/design/ui/"},"frontmatter":{"title":"아티클 - UI Design"}}}]}},"pageContext":{"category":"article"}},
     "staticQueryHashes": ["2841359383","505128165"]}
