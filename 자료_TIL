@@ -3,6 +3,14 @@
 이더리움 이해하기 
 https://brunch.co.kr/@bumgeunsong/47
 
+React의 concurrent 이해하기
+https://medium.com/swlh/what-is-react-concurrent-mode-46989b5f15da
+
+기록
+On modern machines, to provide the best user experience, we are expected to render 60 frames per second (fps). To achieve that, for each render cycle our code should run for no more than 16.67 milliseconds, and realistically even less: somewhere around 10 ms (since, as said previously, the browser has also to deal with other UI tasks).
+
+
+
 ### 21.12.28. 
 
 * Json to Excel 또는 Excel to Json으로 변환하는 방법
