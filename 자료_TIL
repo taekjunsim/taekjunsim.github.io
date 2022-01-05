@@ -7,6 +7,24 @@
 https://prettier.io/docs/en/options.html#quotes
 https://eslint.org/docs/user-guide/configuring/
 
+**** Nullish 병합 연산자 (Nullish coalescing operator)
+- null 또는 undefined일 경우 오른쪽 표현식의 결과를 반환한다.
+ex) console.log(width ?? `100%`) // width가 0일 경우 0을 반환한다.
+
+- 다른 논리 연산자와 함께 쓰기 위해서는 반드시 괄호를 사용해야 한다.
+
+- || 연산자와의 차이점
+  - Nullish 병합 연산자는 null과 undefined만을 false로 간주하고 그 외 0, 빈 문자열, NaN은 그대로 반환한다.
+  - || 연산자는 모든 falsy값(null, undefined, 0, 빈 문자열, NaN)을 false로 간주한다.
+  
+```
+const width = 0;
+
+console.log(width ?? `100%`) // 0
+console.log(width || `100%`) // 100%
+
+```
+
 ### 22.01.04.
 
 이더리움 이해하기 
