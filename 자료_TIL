@@ -25,6 +25,42 @@ console.log(width || `100%`) // 100%
 
 ```
 
+**** first-of-type 과 first-of-child의 차이
+
+first-of-type는 모든 자식(child) 요소 중에서, 맨 처음으로 등장하는 지정 타입의 요소를 모두 선택합니다.
+(각 child 요소의 지정 태그 중 첫번 째) ? 적용 : 미적용
+
+```
+p:first-of-type // p태그를 지정
+
+<div>
+  <p>child 중 첫 번째 p태그이므로 영향을 받음</p>
+  <div>
+    <div>child 중 첫 번째지만 p태그가 아니라 영향을 받지 않음</div>
+    <p>child 중 첫 번째 p태그이므로 영향을 받음</p>
+  </div>
+</div>
+```
+
+
+first-of-child는 모든 자식(child) 요소 중에서 맨 앞에 위치하는 자식(child) 요소를 모두 선택합니다.
+(각 child 요소의 첫번 째 && 지정 태그) ? 적용 : 미적용
+
+```
+p:first-of-child // p태그를 지정
+
+<div>
+  <p>child 중 첫 번째이면서 p태그이므로 영향을 받음</p>
+  <p>child 중 두 번째이므로 p태그라 하더라도 영향을 받지 않음</p>
+</div>
+
+<div>
+  <h2>child 중 첫 번째이지만 p태그가 아니라 영향을 받지 않음</h2>
+  <p>child 중 두 번째이므로 p태그라 하더라도 영향을 받지 않음</p>
+</div>
+```
+
+
 ### 22.01.04.
 
 이더리움 이해하기 
