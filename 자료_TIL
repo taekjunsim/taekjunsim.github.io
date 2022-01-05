@@ -60,6 +60,23 @@ p:first-of-child // p태그를 지정
 </div>
 ```
 
+nth-of-type
+
+```
+p:nth-of-type(2n) {
+  color: blue;
+}
+
+<div>
+  <div>This element isn't counted.</div>
+  <p>1st paragraph.</p>
+  <p class="fancy">child 요소의 p태그 중 2번째이므로 영향을 받음</p>
+  <div>This element isn't counted.</div>
+  <p class="fancy">3rd paragraph.</p>
+  <p>child 요소의 p태그 중 4번째이므로 영향을 받음</p>
+</div>
+```
+
 
 ### 22.01.04.
 
