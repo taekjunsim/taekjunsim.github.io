@@ -1,3 +1,12 @@
+### 22.01.05.
+
+****** Eslint랑 Prettier에 대해서 쓴 글을 전면적으로 수정해야겠다.
+
+전체적인 옵션에 대한 설명과 예시 위주로 변경하고 내가 주로 사용하는 옵션은 제일 밑에 표시
+
+https://prettier.io/docs/en/options.html#quotes
+https://eslint.org/docs/user-guide/configuring/
+
 ### 22.01.04.
 
 이더리움 이해하기 
