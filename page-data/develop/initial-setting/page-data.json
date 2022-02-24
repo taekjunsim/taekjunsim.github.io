@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/develop/initial-setting/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"FODI's blog"}},"markdownRemark":{"id":"2c0091f8-c97d-5ae2-81ce-7b7ae8d396e3","excerpt":"React.js 설치 (1) React.ts","html":"<ol>\n<li>React.js</li>\n</ol>\n<h5>설치</h5>\n<p>(1)</p>\n<!-- 1.  <p class=\"content-subtitle\">ESLint는<p> -->\n<ol start=\"2\">\n<li>React.ts</li>\n</ol>","frontmatter":{"title":"React initial setup","date":"Invalid date","description":null}},"previous":{"fields":{"slug":"/story/2022/"},"frontmatter":{"title":"2022년 목표"}},"next":null},"pageContext":{"id":"2c0091f8-c97d-5ae2-81ce-7b7ae8d396e3","previousPostId":"04e50d60-0f82-5e71-9f10-4c841ae3a15c","nextPostId":null}},
+    "staticQueryHashes": ["2841359383","3257411868"]}
