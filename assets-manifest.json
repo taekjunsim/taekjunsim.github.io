@@ -1,4 +1,18 @@
 {
   "main.js": "render-page.js",
-  "render-page.js.map": "render-page.js.map"
+  "render-page.js.map": "render-page.js.map",
+  "static/checkeddot.png": "static/checkeddot-1d2f623bf2b0d3470eb9dfa6a46a55eb.png",
+  "static/chicken_login.png": "static/chicken_login-5f9e970563351675e23dc8f7601a7a87.png",
+  "static/chicken_main.png": "static/chicken_main-b113ba7a3cb4eab229755ea5043edc3e.png",
+  "static/chicken_nav.png": "static/chicken_nav-78af194ed1b56b78d2c8bf2ab0583001.png",
+  "static/chicken_signup.png": "static/chicken_signup-4240d0a153bc7ad1d78c6296ca10cf6b.png",
+  "static/dot.png": "static/dot-4478e008d47d63a188f9286888e75ebe.png",
+  "static/modak_board.png": "static/modak_board-71dc6a8584582cf452c2dc4bf371d2cc.png",
+  "static/modak_login.png": "static/modak_login-fc3c432168e821db9658de486159fad2.png",
+  "static/modak_main.png": "static/modak_main-c4156f1584cd50eb96c4d697d93087ac.png",
+  "static/modak_namecard.png": "static/modak_namecard-f29bea7a82cefda5a77ad6e518fff105.png",
+  "static/our_login.png": "static/our_login-805dbfdca3d829f050ee7380653e476a.png",
+  "static/our_main.png": "static/our_main-c8927d5e5605e76c114049583f897fc6.png",
+  "static/our_regist.png": "static/our_regist-bddbc7ca15c61323b7259aaceb08c499.png",
+  "static/our_reserve.png": "static/our_reserve-3ab4f5c58f0bc1629dbe571f0986abaf.png"
 }
